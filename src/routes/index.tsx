@@ -1,26 +1,49 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { Services } from "@/components/site/Services";
+import { Trust } from "@/components/site/Trust";
+import { Programs } from "@/components/site/Programs";
+import { RealEstate } from "@/components/site/RealEstate";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Blog } from "@/components/site/Blog";
+import { Quiz } from "@/components/site/Quiz";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "yrelo — иммиграционный центр: ВНЖ, визы талантов, гражданство" },
+      {
+        name: "description",
+        content:
+          "Подбираем легальные программы переезда: США O-1, UK Global Talent, ВНЖ ЕС, гражданства за инвестиции, недвижимость в Греции, Кипре, Турции, Испании. Бесплатная консультация.",
+      },
+      { property: "og:title", content: "yrelo — путь к жизни мечты за границей" },
+      {
+        property: "og:description",
+        content:
+          "Иммиграционный центр полного цикла. Визы талантов, ВНЖ для кочевников, гражданства, недвижимость в ЕС.",
+      },
+      { property: "og:type", content: "website" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="relative overflow-x-hidden bg-background">
+      <Nav />
+      <Hero />
+      <Services />
+      <Trust />
+      <Programs />
+      <RealEstate />
+      <Testimonials />
+      <Blog />
+      <Quiz />
+      <Footer />
+    </main>
+  );
 }
