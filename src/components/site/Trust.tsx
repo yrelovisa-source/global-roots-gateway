@@ -79,11 +79,14 @@ export function Trust() {
           <div className="reveal-scale relative mt-10 overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft md:p-10">
             <div className="relative aspect-[2/1] w-full">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/2560px-World_map_-_low_resolution.svg.png"
-                alt="Карта мира"
+                src="https://cdn.jsdelivr.net/npm/world-atlas@2/world-110m.png"
+                alt=""
+                aria-hidden="true"
                 loading="lazy"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                 className="absolute inset-0 h-full w-full object-contain opacity-25"
               />
+              <div className="absolute inset-0 grid-bg opacity-50" />
               {dots.map((d, i) => (
                 <a key={d.label} href="#consult" style={{ top: d.top, left: d.left, animationDelay: `${i * 120}ms` }} className="group absolute -translate-x-1/2 -translate-y-1/2">
                   <span className="relative grid h-3.5 w-3.5 place-items-center rounded-full bg-coral pulse-ring" />
