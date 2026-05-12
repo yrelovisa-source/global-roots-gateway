@@ -46,11 +46,11 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <Star className="h-5 w-5 text-coral" />
-              <span><b className="text-primary">1200+</b> кейсов</span>
+              <span><b className="text-primary">99%</b> одобрений</span>
             </div>
             <div className="flex items-center gap-2">
               <Sparkles className="h-5 w-5 text-coral" />
-              <span><b className="text-primary">96%</b> одобрений</span>
+              <span><b className="text-primary">100%</b> гарантия по договору</span>
             </div>
           </div>
         </div>
