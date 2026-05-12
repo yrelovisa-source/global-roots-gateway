@@ -42,10 +42,12 @@ function Index() {
       <Trust />
       <Programs />
       <RealEstate />
+      <Experts />
       <Testimonials />
       <Blog />
       <Quiz />
       <Footer />
+      <ContactWidget />
     </main>
   );
 }
