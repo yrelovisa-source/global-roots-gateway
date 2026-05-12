@@ -77,7 +77,7 @@ export function Quiz() {
             <Sparkles className="h-3.5 w-3.5" /> Бесплатная консультация
           </span>
           <h2 className="mt-3 font-display text-4xl font-bold text-primary md:text-5xl">
-            Подберём программу за 60 секунд
+            Подберём программу за 2 минуты
           </h2>
           <p className="mt-3 text-muted-foreground">
             Ответьте на 4 вопроса — иммиграционный консультант пришлёт стратегию и стоимость.
