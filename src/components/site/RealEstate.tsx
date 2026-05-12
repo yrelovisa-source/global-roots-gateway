@@ -1,4 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
+import cyprusVilla from "@/assets/cyprus-villa.jpg";
 
 type Item = {
   country: string;
@@ -24,7 +25,7 @@ const items: Item[] = [
     title: "ПМЖ через недвижимость",
     desc: "Виллы в Лимассоле и Пафосе, новостройки у моря. ПМЖ за 2 месяца.",
     price: "от €300 000",
-    img: "https://images.unsplash.com/photo-1559564484-0a23bf6c4e3a?w=900&q=80&auto=format&fit=crop",
+    img: cyprusVilla,
   },
   {
     country: "Турция",

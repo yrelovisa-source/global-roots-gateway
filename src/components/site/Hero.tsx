@@ -46,11 +46,11 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <Star className="h-5 w-5 text-coral" />
-              <span><b className="text-primary">1200+</b> кейсов</span>
+              <span><b className="text-primary">99%</b> одобрений</span>
             </div>
             <div className="flex items-center gap-2">
               <Sparkles className="h-5 w-5 text-coral" />
-              <span><b className="text-primary">96%</b> одобрений</span>
+              <span><b className="text-primary">100%</b> гарантия по договору</span>
             </div>
           </div>
         </div>
@@ -68,8 +68,8 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
               <div className="rounded-2xl bg-white/85 p-4 backdrop-blur-md shadow-soft animate-float-y">
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">Сегодня записались</div>
-                <div className="font-display text-2xl font-bold text-primary">+147 человек</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">Гарантия по договору</div>
+                <div className="font-display text-2xl font-bold text-primary">100% или возврат</div>
               </div>
               <span className="grid h-14 w-14 place-items-center rounded-full bg-coral-gradient text-coral-foreground shadow-coral animate-float-y" style={{ animationDelay: "1s" }}>
                 <Sparkles className="h-6 w-6" />
