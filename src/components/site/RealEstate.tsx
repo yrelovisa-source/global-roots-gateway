@@ -1,4 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
+import cyprusVilla from "@/assets/cyprus-villa.jpg";
 
 type Item = {
   country: string;
