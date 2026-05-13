@@ -1,21 +1,30 @@
 import passportImg from "@/assets/passport.jpg";
-import suitcaseImg from "@/assets/suitcase.jpg";
+import caseImg from "@/assets/case-management.jpg";
 import consultantImg from "@/assets/consultant.jpg";
 import { useReveal } from "@/hooks/use-reveal";
 import { CheckCircle2, ShieldCheck, FileCheck, Clock } from "lucide-react";
 
 const dots = [
-  { top: "32%", left: "20%", label: "США" },
-  { top: "30%", left: "47%", label: "UK" },
-  { top: "37%", left: "52%", label: "Испания" },
-  { top: "40%", left: "55%", label: "Кипр" },
-  { top: "45%", left: "58%", label: "Турция" },
-  { top: "55%", left: "73%", label: "Бали" },
-  { top: "52%", left: "70%", label: "Таиланд" },
-  { top: "70%", left: "32%", label: "Чили" },
-  { top: "65%", left: "35%", label: "Аргентина" },
-  { top: "58%", left: "37%", label: "Бразилия" },
-  { top: "44%", left: "49%", label: "Греция" },
+  { top: "29%", left: "23%", label: "США" },
+  { top: "19%", left: "21%", label: "Канада" },
+  { top: "20%", left: "49%", label: "UK" },
+  { top: "21%", left: "51%", label: "Нидерланды" },
+  { top: "22%", left: "53%", label: "Германия" },
+  { top: "24%", left: "50%", label: "Франция" },
+  { top: "27%", left: "48%", label: "Испания" },
+  { top: "28%", left: "47%", label: "Португалия" },
+  { top: "29%", left: "56%", label: "Греция" },
+  { top: "27%", left: "55%", label: "Черногория" },
+  { top: "26%", left: "56%", label: "Сербия" },
+  { top: "28%", left: "60%", label: "Турция" },
+  { top: "31%", left: "59%", label: "Кипр" },
+  { top: "28%", left: "63%", label: "Армения" },
+  { top: "42%", left: "78%", label: "Таиланд" },
+  { top: "54%", left: "82%", label: "Бали" },
+  { top: "64%", left: "87%", label: "Австралия" },
+  { top: "56%", left: "35%", label: "Бразилия" },
+  { top: "67%", left: "30%", label: "Чили" },
+  { top: "69%", left: "32%", label: "Аргентина" },
 ];
 
 export function Trust() {
@@ -121,7 +130,7 @@ export function Trust() {
           </div>
           <div className="reveal-scale relative">
             <div className="absolute -inset-8 rounded-full bg-sky/40 blur-3xl animate-blob" />
-            <img src={suitcaseImg} alt="Чемодан в путешествие" loading="lazy" className="relative animate-float-y rounded-3xl object-cover shadow-glow" />
+            <img src={caseImg} alt="Команда yrelo сопровождает кейс" loading="lazy" className="relative animate-float-y rounded-3xl object-cover shadow-glow" />
           </div>
         </div>
 
