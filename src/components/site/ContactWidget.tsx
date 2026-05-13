@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
+import ivanPhoto from "@/assets/expert-ivan.jpg";
 
 export function ContactWidget() {
   const [open, setOpen] = useState(false);
@@ -37,12 +38,27 @@ export function ContactWidget() {
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label="Открыть мессенджеры"
-          className="group relative grid h-14 w-14 place-items-center rounded-full bg-coral-gradient text-coral-foreground shadow-coral transition hover:scale-110"
+          className="group relative h-16 w-16 overflow-visible rounded-full bg-coral-gradient p-[3px] shadow-coral transition hover:scale-110"
         >
           {!open && (
             <span className="absolute inset-0 rounded-full bg-coral/40 animate-ping" aria-hidden="true" />
           )}
-          {open ? <X className="relative h-6 w-6" /> : <MessageCircle className="relative h-6 w-6" />}
+          {open ? (
+            <span className="relative grid h-full w-full place-items-center rounded-full bg-coral text-coral-foreground">
+              <X className="h-6 w-6" />
+            </span>
+          ) : (
+            <img
+              src={ivanPhoto}
+              alt="Иван Савин — онлайн"
+              className="relative h-full w-full rounded-full object-cover ring-2 ring-card"
+            />
+          )}
+          {!open && (
+            <span className="absolute -bottom-0.5 -right-0.5 grid h-5 w-5 place-items-center rounded-full bg-card shadow-soft">
+              <span className="h-3 w-3 rounded-full bg-[#25D366]" />
+            </span>
+          )}
         </button>
       </div>
     </div>
