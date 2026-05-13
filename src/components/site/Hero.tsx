@@ -63,6 +63,8 @@ export function Hero() {
               alt="Карьерный путь к мечте — бизнесмен идёт по облакам"
               width={1600}
               height={1024}
+              fetchPriority="high"
+              decoding="async"
               className="h-[520px] w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
