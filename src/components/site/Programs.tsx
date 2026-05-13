@@ -1,5 +1,7 @@
 import { useReveal } from "@/hooks/use-reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import chileFamily from "@/assets/chile-family.jpg";
+import armeniaImg from "@/assets/armenia.jpg";
 
 type Program = {
   flag: string;
