@@ -240,6 +240,12 @@ export function Programs() {
                 </div>
                 <a href="#consult" className="text-sm font-semibold text-coral hover:underline">Подходит мне? →</a>
               </div>
+              {g.note && (
+                <a href="#consult" className="reveal mb-6 flex items-start gap-3 rounded-2xl border border-coral/30 bg-coral/5 p-4 text-sm text-primary shadow-soft transition hover:bg-coral/10">
+                  <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-coral" />
+                  <span><span className="font-semibold">Бонус:</span> {g.note}</span>
+                </a>
+              )}
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {g.items.map((p, i) => (
                   <a
