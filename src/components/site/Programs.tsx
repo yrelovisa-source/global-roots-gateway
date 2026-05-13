@@ -33,7 +33,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         visa: "Digital Nomad — подача из РФ",
         desc: "Полный цикл за 4 месяца с подачей документов из России. ВНЖ на 1 год с продлением.",
         bullets: ["Подача из РФ", "4 месяца под ключ", "Шенген с ВНЖ"],
-        img: "https://images.unsplash.com/photo-1555990538-32eb0d727b6?w=900&q=80&auto=format&fit=crop",
+        img: "https://images.unsplash.com/photo-1555990538-32eb0d727baa?w=900&q=80&auto=format&fit=crop",
         tag: "Без выезда",
       },
       {
