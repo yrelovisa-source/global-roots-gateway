@@ -53,6 +53,9 @@ export function Quiz() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const sendLead = useServerFn(sendLeadToTelegram);
 
   const steps = ["Страна", "Цель", "Бюджет", "Срок", "Контакты"];
   const progress = useMemo(() => ((step + 1) / steps.length) * 100, [step]);
@@ -64,10 +67,34 @@ export function Quiz() {
     (step === 3 && !!time) ||
     (step === 4 && name.trim().length > 1 && contact.trim().length > 4);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!canNext) return;
-    setSent(true);
+    if (!canNext || sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      const labelOf = <T extends { id: string; label: string }>(arr: T[], id: string | null) =>
+        arr.find((x) => x.id === id)?.label ?? id ?? "";
+      const res = await sendLead({
+        data: {
+          country: labelOf(countries, country),
+          goal: labelOf(goals, goal),
+          budget: labelOf(budgets, budget),
+          timing: labelOf(timing, time),
+          name: name.trim(),
+          contact: contact.trim(),
+        },
+      });
+      if (res?.ok) {
+        setSent(true);
+      } else {
+        setError("Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
+      }
+    } catch {
+      setError("Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
