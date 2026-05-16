@@ -1,8 +1,6 @@
 import { useMemo, useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
 import { useReveal } from "@/hooks/use-reveal";
 import { ArrowLeft, ArrowRight, Check, Sparkles, Loader2 } from "lucide-react";
-import { sendLeadToTelegram } from "@/lib/telegram.functions";
 
 const countries = [
   { id: "usa", flag: "🇺🇸", label: "США" },
@@ -55,7 +53,6 @@ export function Quiz() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const sendLead = useServerFn(sendLeadToTelegram);
 
   const steps = ["Страна", "Цель", "Бюджет", "Срок", "Контакты"];
   const progress = useMemo(() => ((step + 1) / steps.length) * 100, [step]);
@@ -75,17 +72,20 @@ export function Quiz() {
     try {
       const labelOf = <T extends { id: string; label: string }>(arr: T[], id: string | null) =>
         arr.find((x) => x.id === id)?.label ?? id ?? "";
-      const res = await sendLead({
-        data: {
+      const resp = await fetch("/api/telegram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           country: labelOf(countries, country),
           goal: labelOf(goals, goal),
           budget: labelOf(budgets, budget),
           timing: labelOf(timing, time),
           name: name.trim(),
           contact: contact.trim(),
-        },
+        }),
       });
-      if (res?.ok) {
+      const res = await resp.json().catch(() => ({ ok: false }));
+      if (resp.ok && res?.ok) {
         setSent(true);
       } else {
         setError("Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
