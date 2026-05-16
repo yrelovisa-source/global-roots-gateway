@@ -216,12 +216,15 @@ export function Quiz() {
                       Далее <ArrowRight className="h-4 w-4" />
                     </button>
                   ) : (
-                    <button type="submit" disabled={!canNext}
+                    <button type="submit" disabled={!canNext || sending}
                       className="inline-flex items-center gap-2 rounded-full bg-coral-gradient px-7 py-3.5 text-sm font-semibold text-coral-foreground shadow-coral transition disabled:opacity-50 hover:scale-105">
-                      Получить стратегию <Check className="h-4 w-4" />
+                      {sending ? (<>Отправляем… <Loader2 className="h-4 w-4 animate-spin" /></>) : (<>Получить стратегию <Check className="h-4 w-4" /></>)}
                     </button>
                   )}
                 </div>
+                {error && (
+                  <p className="mt-4 text-sm text-destructive">{error}</p>
+                )}
               </div>
 
               <aside className="hidden flex-col justify-between bg-card-gradient p-8 text-primary-foreground lg:flex">
