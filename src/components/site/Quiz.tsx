@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { useReveal } from "@/hooks/use-reveal";
-import { ArrowLeft, ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Sparkles, Loader2 } from "lucide-react";
+import { sendLeadToTelegram } from "@/lib/telegram.functions";
 
 const countries = [
   { id: "usa", flag: "🇺🇸", label: "США" },
