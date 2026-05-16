@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { useReveal } from "@/hooks/use-reveal";
-import { ArrowLeft, ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Sparkles, Loader2 } from "lucide-react";
+import { sendLeadToTelegram } from "@/lib/telegram.functions";
 
 const countries = [
   { id: "usa", flag: "🇺🇸", label: "США" },
@@ -51,6 +53,9 @@ export function Quiz() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const sendLead = useServerFn(sendLeadToTelegram);
 
   const steps = ["Страна", "Цель", "Бюджет", "Срок", "Контакты"];
   const progress = useMemo(() => ((step + 1) / steps.length) * 100, [step]);
@@ -62,10 +67,34 @@ export function Quiz() {
     (step === 3 && !!time) ||
     (step === 4 && name.trim().length > 1 && contact.trim().length > 4);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!canNext) return;
-    setSent(true);
+    if (!canNext || sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      const labelOf = <T extends { id: string; label: string }>(arr: T[], id: string | null) =>
+        arr.find((x) => x.id === id)?.label ?? id ?? "";
+      const res = await sendLead({
+        data: {
+          country: labelOf(countries, country),
+          goal: labelOf(goals, goal),
+          budget: labelOf(budgets, budget),
+          timing: labelOf(timing, time),
+          name: name.trim(),
+          contact: contact.trim(),
+        },
+      });
+      if (res?.ok) {
+        setSent(true);
+      } else {
+        setError("Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
+      }
+    } catch {
+      setError("Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -187,12 +216,15 @@ export function Quiz() {
                       Далее <ArrowRight className="h-4 w-4" />
                     </button>
                   ) : (
-                    <button type="submit" disabled={!canNext}
+                    <button type="submit" disabled={!canNext || sending}
                       className="inline-flex items-center gap-2 rounded-full bg-coral-gradient px-7 py-3.5 text-sm font-semibold text-coral-foreground shadow-coral transition disabled:opacity-50 hover:scale-105">
-                      Получить стратегию <Check className="h-4 w-4" />
+                      {sending ? (<>Отправляем… <Loader2 className="h-4 w-4 animate-spin" /></>) : (<>Получить стратегию <Check className="h-4 w-4" /></>)}
                     </button>
                   )}
                 </div>
+                {error && (
+                  <p className="mt-4 text-sm text-destructive">{error}</p>
+                )}
               </div>
 
               <aside className="hidden flex-col justify-between bg-card-gradient p-8 text-primary-foreground lg:flex">
