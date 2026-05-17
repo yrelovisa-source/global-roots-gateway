@@ -72,16 +72,35 @@ export function Quiz() {
     try {
       const labelOf = <T extends { id: string; label: string }>(arr: T[], id: string | null) =>
         arr.find((x) => x.id === id)?.label ?? id ?? "";
-      const resp = await fetch("/api/telegram", {
+
+      const token = import.meta.env.VITE_TELEGRAM_BOT_TOKEN as string | undefined;
+      const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID as string | undefined;
+      if (!token || !chatId) {
+        setError("Форма не настроена. Свяжитесь с нами через WhatsApp или Telegram.");
+        setSending(false);
+        return;
+      }
+
+      const esc = (s: string) =>
+        s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+      const text =
+        `🔥 <b>Новая заявка yrelo.com</b>\n\n` +
+        `👤 <b>Имя:</b> ${esc(name.trim())}\n` +
+        `📞 <b>Контакт:</b> ${esc(contact.trim())}\n` +
+        `🌍 <b>Страна:</b> ${esc(labelOf(countries, country))}\n` +
+        `🎯 <b>Цель:</b> ${esc(labelOf(goals, goal))}\n` +
+        `💰 <b>Бюджет:</b> ${esc(labelOf(budgets, budget))}\n` +
+        `⏱ <b>Срок:</b> ${esc(labelOf(timing, time))}`;
+
+      const resp = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          country: labelOf(countries, country),
-          goal: labelOf(goals, goal),
-          budget: labelOf(budgets, budget),
-          timing: labelOf(timing, time),
-          name: name.trim(),
-          contact: contact.trim(),
+          chat_id: chatId,
+          text,
+          parse_mode: "HTML",
+          disable_web_page_preview: true,
         }),
       });
       const res = await resp.json().catch(() => ({ ok: false }));
