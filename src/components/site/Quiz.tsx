@@ -93,7 +93,7 @@ export function Quiz() {
         `💰 <b>Бюджет:</b> ${esc(labelOf(budgets, budget))}\n` +
         `⏱ <b>Срок:</b> ${esc(labelOf(timing, time))}`;
 
-      const resp = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      const resp = await fetch(`https://api.telegram.org/bot${encodeURIComponent(token)}/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -107,7 +107,13 @@ export function Quiz() {
       if (resp.ok && res?.ok) {
         setSent(true);
       } else {
-        setError("Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
+        const description = typeof res?.description === "string" ? res.description : "";
+        const hint = description.includes("chat not found")
+          ? "Проверьте VITE_TELEGRAM_CHAT_ID: бот должен быть добавлен в чат или пользователь должен сначала написать боту."
+          : description.includes("Unauthorized")
+            ? "Проверьте VITE_TELEGRAM_BOT_TOKEN в GitHub Secrets."
+            : "Напишите нам напрямую в WhatsApp или Telegram.";
+        setError(`Не удалось отправить заявку. ${hint}`);
       }
     } catch {
       setError("Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
