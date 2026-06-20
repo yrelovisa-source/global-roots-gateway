@@ -1,15 +1,13 @@
-import { Plane, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/yrelo-logo.png";
 
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 font-display text-2xl font-bold">
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-coral-gradient text-coral-foreground shadow-coral">
-              <Plane className="h-4 w-4 -rotate-45" />
-            </span>
-            yrelo
+          <div className="inline-flex items-center rounded-2xl bg-white px-4 py-2 shadow-soft">
+            <img src={logo} alt="yrelo" width={130} height={40} className="h-9 w-auto" />
           </div>
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/70">
             Иммиграционный центр полного цикла. Легальные программы для переезда и второго гражданства.
