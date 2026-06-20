@@ -1,4 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
+import { Plane, BadgePercent, Handshake, Gift } from "lucide-react";
 import cyprusVilla from "@/assets/cyprus-villa.jpg";
 
 type Item = {
@@ -90,6 +91,41 @@ export function RealEstate() {
           <p className="mt-4 text-muted-foreground">
             Подбираем ликвидные объекты, проверяем юридически и сопровождаем сделку.
           </p>
+        </div>
+
+        {/* Invest tour offer */}
+        <div className="reveal mt-12 overflow-hidden rounded-3xl border border-coral/30 bg-card shadow-glow">
+          <div className="grid items-center gap-6 p-6 md:grid-cols-[1fr_auto] md:p-8">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-coral-gradient px-3 py-1 text-xs font-bold uppercase tracking-wider text-coral-foreground shadow-coral">
+                <Gift className="h-3.5 w-3.5" /> Бонус для клиентов
+              </span>
+              <h3 className="mt-3 font-display text-2xl font-bold text-primary md:text-3xl">
+                Инвест-тур по локациям — в подарок
+              </h3>
+              <p className="mt-2 max-w-2xl text-muted-foreground">
+                Прилетаете на 3–5 дней: смотрим объекты вживую, встречаемся с застройщиками,
+                разбираем налоги и условия ВНЖ. Тур бесплатно при выходе на сделку.
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                <div className="flex items-start gap-2 text-sm">
+                  <Handshake className="mt-0.5 h-5 w-5 shrink-0 text-coral" />
+                  <span><b className="text-primary">Цены напрямую</b> от застройщиков, без посредников</span>
+                </div>
+                <div className="flex items-start gap-2 text-sm">
+                  <BadgePercent className="mt-0.5 h-5 w-5 shrink-0 text-coral" />
+                  <span><b className="text-primary">Комиссия 0%</b> — мы зарабатываем у девелопера</span>
+                </div>
+                <div className="flex items-start gap-2 text-sm">
+                  <Plane className="mt-0.5 h-5 w-5 shrink-0 text-coral" />
+                  <span><b className="text-primary">Перелёт и отель</b> компенсируем при покупке</span>
+                </div>
+              </div>
+            </div>
+            <a href="#consult" className="inline-flex items-center justify-center gap-2 rounded-full bg-coral-gradient px-7 py-3.5 text-sm font-semibold text-coral-foreground shadow-coral transition hover:scale-[1.04] md:self-center">
+              Записаться на инвест-тур
+            </a>
+          </div>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
