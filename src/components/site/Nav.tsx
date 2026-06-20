@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Plane } from "lucide-react";
+import logo from "@/assets/yrelo-logo.png";
 
 const links = [
   { href: "#services", label: "Услуги" },
   { href: "#programs", label: "Программы" },
+  { href: "#education", label: "Образование" },
   { href: "#realestate", label: "Недвижимость" },
   { href: "#reviews", label: "Отзывы" },
   { href: "#blog", label: "Блог" },
@@ -29,11 +30,8 @@ export function Nav() {
           scrolled ? "glass shadow-soft" : "bg-transparent"
         }`}
       >
-        <a href="#top" className="flex items-center gap-2 font-display text-xl font-bold">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-coral-gradient text-coral-foreground shadow-coral">
-            <Plane className="h-4 w-4 -rotate-45" />
-          </span>
-          <span className="text-primary">yrelo</span>
+        <a href="#top" className="flex items-center gap-2" aria-label="yrelo — на главную">
+          <img src={logo} alt="yrelo" width={120} height={36} className="h-9 w-auto" />
         </a>
         <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
           {links.map((l) => (

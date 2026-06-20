@@ -1,18 +1,38 @@
 import { useReveal } from "@/hooks/use-reveal";
 import ivan from "@/assets/expert-ivan.jpg";
-import e1 from "@/assets/expert-1.jpg";
-import e2 from "@/assets/expert-2.jpg";
-import e3 from "@/assets/expert-3.jpg";
-import e4 from "@/assets/expert-4.jpg";
-import e5 from "@/assets/expert-5.jpg";
 import { Linkedin, Send } from "lucide-react";
 
 const team = [
-  { name: "Анна Петрова", role: "Старший иммиграционный юрист", focus: "США O-1, EB-2 NIW", img: e1 },
-  { name: "Михаил Краузе", role: "Эксперт по визам талантов", focus: "UK Global Talent, Шенген", img: e2 },
-  { name: "Елена Соколова", role: "Консультант по недвижимости", focus: "Греция, Кипр, Португалия", img: e3 },
-  { name: "Давид Аракелян", role: "Эксперт по репатриации", focus: "Армения, Израиль, Болгария", img: e4 },
-  { name: "Лин Чэнь", role: "Эксперт по гражданству за инвестиции", focus: "Вануату, Сан-Томе, Турция", img: e5 },
+  {
+    name: "Анна Петрова",
+    role: "Старший иммиграционный юрист",
+    focus: "США O-1, EB-2 NIW",
+    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop",
+  },
+  {
+    name: "Михаил Краузе",
+    role: "Эксперт по визам талантов",
+    focus: "UK Global Talent, Шенген",
+    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop",
+  },
+  {
+    name: "Елена Соколова",
+    role: "Консультант по недвижимости",
+    focus: "Греция, Кипр, Португалия",
+    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80&auto=format&fit=crop",
+  },
+  {
+    name: "Давид Аракелян",
+    role: "Эксперт по репатриации",
+    focus: "Армения, Израиль",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop",
+  },
+  {
+    name: "Ольга Никитина",
+    role: "Эксперт по гражданству за инвестиции",
+    focus: "Вануату, Сан-Томе, Турция",
+    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&auto=format&fit=crop",
+  },
 ];
 
 export function Experts() {
