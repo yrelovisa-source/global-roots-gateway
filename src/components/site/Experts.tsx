@@ -1,5 +1,10 @@
 import { useReveal } from "@/hooks/use-reveal";
 import ivan from "@/assets/expert-ivan.jpg";
+import teamAnna from "@/assets/team-anna.jpg";
+import teamMikhail from "@/assets/team-mikhail.jpg";
+import teamElena from "@/assets/team-elena.jpg";
+import teamDavid from "@/assets/team-david.jpg";
+import teamOlga from "@/assets/team-olga.jpg";
 import { Linkedin, Send } from "lucide-react";
 
 const team = [
@@ -7,31 +12,31 @@ const team = [
     name: "Анна Петрова",
     role: "Старший иммиграционный юрист",
     focus: "США O-1, EB-2 NIW",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop",
+    img: teamAnna,
   },
   {
     name: "Михаил Краузе",
     role: "Эксперт по визам талантов",
     focus: "UK Global Talent, Шенген",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop",
+    img: teamMikhail,
   },
   {
     name: "Елена Соколова",
     role: "Консультант по недвижимости",
     focus: "Греция, Кипр, Португалия",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80&auto=format&fit=crop",
+    img: teamElena,
   },
   {
     name: "Давид Аракелян",
     role: "Эксперт по репатриации",
     focus: "Армения, Израиль",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop",
+    img: teamDavid,
   },
   {
     name: "Ольга Никитина",
     role: "Эксперт по гражданству за инвестиции",
     focus: "Вануату, Сан-Томе, Турция",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&auto=format&fit=crop",
+    img: teamOlga,
   },
 ];
 
