@@ -1,5 +1,8 @@
 import { useReveal } from "@/hooks/use-reveal";
 import { GraduationCap, ArrowRight, Award, Building2 } from "lucide-react";
+import eduSpain from "@/assets/edu-spain.jpg";
+import eduGermany from "@/assets/edu-germany.jpg";
+import eduNetherlands from "@/assets/edu-netherlands.jpg";
 
 type Item = {
   flag: string;
@@ -43,7 +46,7 @@ const items: Item[] = [
     title: "Университеты и магистратура",
     desc: "IE, ESADE, IESE и государственные вузы. Студенческая виза с правом работать 30 ч/нед.",
     bullets: ["Топ-бизнес-школы мира", "Семья включена", "Работа 30 ч/нед"],
-    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80&auto=format&fit=crop",
+    img: eduSpain,
   },
   {
     flag: "🇮🇹",
@@ -59,7 +62,7 @@ const items: Item[] = [
     title: "Бесплатное высшее в Германии",
     desc: "TU Munich, RWTH Aachen, LMU. Государственные университеты — обучение бесплатно, виза Job Seeker после диплома.",
     bullets: ["€0 за обучение", "18 мес Job Seeker", "Путь к ВНЖ ЕС"],
-    img: "https://images.unsplash.com/photo-1599math?w=900&q=80&auto=format&fit=crop",
+    img: eduGermany,
     tag: "Бесплатно",
   },
   {
@@ -76,7 +79,7 @@ const items: Item[] = [
     title: "Голландские исследовательские университеты",
     desc: "Amsterdam, Delft, Utrecht. 95% программ на английском, Orientation Year для поиска работы.",
     bullets: ["English-taught", "1 год Orientation", "Сильный диплом"],
-    img: "https://images.unsplash.com/photo-1534351590666-13e3e96c5017?w=900&q=80&auto=format&fit=crop",
+    img: eduNetherlands,
   },
 ];
 

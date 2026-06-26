@@ -114,7 +114,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         visa: "Гражданство по рождению",
         desc: "Ребёнок, рождённый в Чили, получает гражданство сразу. Родителям — ВНЖ и натурализация за 2 года.",
         bullets: ["Паспорт малышу", "ВНЖ родителям", "Гражданство за 2 года"],
-        img: "/src/assets/chile-family.jpg",
+        img: chileFamily,
         tag: "Семейный фаворит",
       },
       {
@@ -162,7 +162,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         visa: "Репатриация",
         desc: "Гражданство по этническим корням за 1–4 месяца, без отказа от текущего паспорта.",
         bullets: ["1–4 месяца", "Двойное гражданство", "Без проживания"],
-        img: "/src/assets/armenia.jpg",
+        img: armeniaImg,
       },
       {
         flag: "🇮🇱",
