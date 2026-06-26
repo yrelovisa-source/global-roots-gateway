@@ -38,7 +38,7 @@ const items: Item[] = [
   },
   {
     country: "Испания",
-    flag: "🇪🇸",
+    flag: "\n",
     title: "Жилая и коммерческая недвижимость",
     desc: "Барселона, Валенсия, Коста-Брава. Под digital nomad визу и Non-Lucrative.",
     price: "от €180 000",
@@ -46,7 +46,7 @@ const items: Item[] = [
   },
   {
     country: "Франция",
-    flag: "🇫🇷",
+    flag: "\n",
     title: "Апартаменты и доходная недвижимость",
     desc: "Париж, Лазурный берег. Под визу талантов Passeport Talent.",
     price: "от €350 000",
@@ -54,7 +54,7 @@ const items: Item[] = [
   },
   {
     country: "Португалия",
-    flag: "🇵🇹",
+    flag: "\n",
     title: "Лиссабон, Порту и Алгарве",
     desc: "Под D7 и D8 (digital nomad). Доходные квартиры и виллы.",
     price: "от €220 000",

@@ -16,7 +16,7 @@ type Item = {
 
 const items: Item[] = [
   {
-    flag: "🇬🇧",
+    flag: "\n",
     country: "Великобритания",
     title: "Школы-пансионы и университеты",
     desc: "Eton, Harrow, Westminster, топ-10 британских университетов. Подбор, подача, опекунство и виза Student / Child Student.",
@@ -25,7 +25,7 @@ const items: Item[] = [
     tag: "Топ-выбор",
   },
   {
-    flag: "🇬🇧",
+    flag: "\n",
     country: "Великобритания",
     title: "Graduate Route — работа после диплома",
     desc: "2 года рабочей визы после окончания UK университета без оффера. Путь к Skilled Worker и ILR.",
@@ -33,7 +33,7 @@ const items: Item[] = [
     img: "https://images.unsplash.com/photo-1568667256549-094345857637?w=900&q=80&auto=format&fit=crop",
   },
   {
-    flag: "🇨🇭",
+    flag: "\n",
     country: "Швейцария",
     title: "Частные школы Швейцарии",
     desc: "Le Rosey, Institut auf dem Rosenberg, Aiglon. Билингвальное обучение, IB / A-Level / Matura.",
@@ -41,7 +41,7 @@ const items: Item[] = [
     img: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=900&q=80&auto=format&fit=crop",
   },
   {
-    flag: "🇪🇸",
+    flag: "\n",
     country: "Испания",
     title: "Университеты и магистратура",
     desc: "IE, ESADE, IESE и государственные вузы. Студенческая виза с правом работать 30 ч/нед.",
@@ -49,7 +49,7 @@ const items: Item[] = [
     img: eduSpain,
   },
   {
-    flag: "🇮🇹",
+    flag: "\n",
     country: "Италия",
     title: "Bocconi, Politecnico, дизайн-академии",
     desc: "Bachelor и Master на английском. Доступная стоимость, гранты, виза с работой и стажировками.",
@@ -57,7 +57,7 @@ const items: Item[] = [
     img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&q=80&auto=format&fit=crop",
   },
   {
-    flag: "🇩🇪",
+    flag: "\n",
     country: "Германия",
     title: "Бесплатное высшее в Германии",
     desc: "TU Munich, RWTH Aachen, LMU. Государственные университеты — обучение бесплатно, виза Job Seeker после диплома.",
@@ -66,7 +66,7 @@ const items: Item[] = [
     tag: "Бесплатно",
   },
   {
-    flag: "🇫🇷",
+    flag: "\n",
     country: "Франция",
     title: "Sciences Po, HEC, Сорбонна",
     desc: "Бакалавриат и магистратура на английском и французском. APS-виза на 12 месяцев после диплома.",
@@ -74,7 +74,7 @@ const items: Item[] = [
     img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=80&auto=format&fit=crop",
   },
   {
-    flag: "🇳🇱",
+    flag: "\n",
     country: "Нидерланды",
     title: "Голландские исследовательские университеты",
     desc: "Amsterdam, Delft, Utrecht. 95% программ на английском, Orientation Year для поиска работы.",
