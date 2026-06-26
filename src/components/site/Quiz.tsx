@@ -3,8 +3,8 @@ import { useReveal } from "@/hooks/use-reveal";
 import { ArrowLeft, ArrowRight, Check, Sparkles, Loader2 } from "lucide-react";
 
 const countries = [
-  { id: "usa", flag: "🇺🇸", label: "США" },
-  { id: "uk", flag: "🇬🇧", label: "Великобритания" },
+  { id: "usa", flag: "\n", label: "США" },
+  { id: "uk", flag: "\n", label: "Великобритания" },
   { id: "eu", flag: "🇪🇺", label: "Евросоюз" },
   { id: "greece", flag: "🇬🇷", label: "Греция" },
   { id: "cyprus", flag: "🇨🇾", label: "Кипр" },

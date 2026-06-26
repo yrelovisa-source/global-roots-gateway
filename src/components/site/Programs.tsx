@@ -19,7 +19,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
     subtitle: "Самые востребованные программы 2025 года — в порядке скорости и надёжности",
     items: [
       {
-        flag: "🇪🇸",
+        flag: "\n",
         country: "Испания",
         visa: "Digital Nomad — под ключ на 3 года",
         desc: "Подача из Испании, тур-визы для семьи в подарок. ВНЖ на 3 года с продлением и путём к ПМЖ.",
@@ -28,7 +28,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         tag: "Хит сезона",
       },
       {
-        flag: "🇭🇷",
+        flag: "\n",
         country: "Хорватия",
         visa: "Digital Nomad — подача из РФ",
         desc: "Полный цикл за 4 месяца с подачей документов из России. ВНЖ на 1 год с продлением.",
@@ -37,7 +37,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         tag: "Без выезда",
       },
       {
-        flag: "🇵🇹",
+        flag: "\n",
         country: "Португалия",
         visa: "D7 — пассивный доход",
         desc: "ВНЖ для тех, у кого есть стабильный пассивный доход. Путь к паспорту ЕС за 5 лет.",
@@ -45,7 +45,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=900&q=80&auto=format&fit=crop",
       },
       {
-        flag: "🇫🇷",
+        flag: "\n",
         country: "Франция",
         visa: "Passeport Talent — стартап и эксперт",
         desc: "ВНЖ на 4 года для основателей стартапов и признанных специалистов. Путь к гражданству.",
@@ -53,7 +53,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&q=80&auto=format&fit=crop",
       },
       {
-        flag: "🇺🇸",
+        flag: "\n",
         country: "США",
         visa: "O-1 / EB-2 NIW",
         desc: "Виза талантов O-1A и O-1B с переходом на грин-карту EB-2 NIW внутри США.",
@@ -62,7 +62,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         tag: "Топ-выбор",
       },
       {
-        flag: "🇬🇧",
+        flag: "\n",
         country: "Великобритания",
         visa: "Global Talent",
         desc: "Виза талантов без работодателя для tech, науки, искусства, академии. ILR за 3 года.",
@@ -70,7 +70,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80&auto=format&fit=crop",
       },
       {
-        flag: "🇦🇪",
+        flag: "\n",
         country: "ОАЭ",
         visa: "Golden Visa / Freelance",
         desc: "Резиденция на 2–10 лет через бизнес, инвестиции или фриланс-статус. 0% подоходного.",
@@ -78,7 +78,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=80&auto=format&fit=crop",
       },
       {
-        flag: "🇮🇹",
+        flag: "\n",
         country: "Италия",
         visa: "Elective Residence / Investor",
         desc: "ВНЖ для финансово независимых и инвесторов. Путь к гражданству ЕС за 10 лет.",
@@ -86,7 +86,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=900&q=80&auto=format&fit=crop",
       },
       {
-        flag: "🇷🇸",
+        flag: "\n",
         country: "Сербия",
         visa: "ВНЖ через бизнес или недвижимость",
         desc: "Быстрый ВНЖ за 1 месяц через регистрацию компании или покупку жилья. Без отказа от паспорта.",
@@ -100,7 +100,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
     subtitle: "Паспорт ребёнку сразу и ускоренная натурализация для родителей",
     items: [
       {
-        flag: "🇦🇷",
+        flag: "\n",
         country: "Аргентина",
         visa: "Гражданство по рождению",
         desc: "Jus soli: ребёнок — гражданин Аргентины. Родители получают паспорт через 2 года резиденции.",
@@ -109,7 +109,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         tag: "Топ-1",
       },
       {
-        flag: "🇨🇱",
+        flag: "\n",
         country: "Чили",
         visa: "Гражданство по рождению",
         desc: "Ребёнок, рождённый в Чили, получает гражданство сразу. Родителям — ВНЖ и натурализация за 2 года.",
@@ -118,7 +118,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         tag: "Семейный фаворит",
       },
       {
-        flag: "🇧🇷",
+        flag: "\n",
         country: "Бразилия",
         visa: "Гражданство по рождению",
         desc: "Паспорт ребёнку сразу + ускоренная натурализация родителей за 1 год по программе родителя гражданина.",
@@ -126,7 +126,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=900&q=80&auto=format&fit=crop",
       },
       {
-        flag: "🇵🇪",
+        flag: "\n",
         country: "Перу",
         visa: "Гражданство по рождению",
         desc: "Гражданство по jus soli ребёнку и натурализация родителям через 2 года резиденции.",
@@ -134,7 +134,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?w=900&q=80&auto=format&fit=crop",
       },
       {
-        flag: "🇪🇸",
+        flag: "\n",
         country: "Испания",
         visa: "Гражданство ребёнку при ВНЖ родителей",
         desc: "Если у родителей ВНЖ Испании, ребёнок может получить гражданство уже через 1 год после рождения.",
@@ -142,7 +142,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=900&q=80&auto=format&fit=crop",
       },
       {
-        flag: "🇺🇸",
+        flag: "\n",
         country: "США",
         visa: "Гражданство по рождению",
         desc: "Ребёнок, рождённый в США, — гражданин по 14-й поправке. Родителям — путь через спонсорство в 21 год.",
@@ -157,7 +157,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
     note: "Если у вас есть реальные корни — мы бесплатно поможем заполнить файл «Семейное древо» и проверим право на репатриацию.",
     items: [
       {
-        flag: "🇦🇲",
+        flag: "\n",
         country: "Армения",
         visa: "Репатриация",
         desc: "Гражданство по этническим корням за 1–4 месяца, без отказа от текущего паспорта.",
@@ -165,7 +165,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: armeniaImg,
       },
       {
-        flag: "🇮🇱",
+        flag: "\n",
         country: "Израиль",
         visa: "Алия",
         desc: "Возвращение по Закону о возвращении: гражданство по приезду для евреев и членов семьи.",
@@ -180,7 +180,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
     subtitle: "Сан-Томе и Принсипи, Вануату",
     items: [
       {
-        flag: "🇸🇹",
+        flag: "\n",
         country: "Сан-Томе и Принсипи",
         visa: "Гражданство",
         desc: "Доступная программа CBI с быстрой выдачей паспорта.",
@@ -188,7 +188,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1504457047772-27faf1c00561?w=900&q=80&auto=format&fit=crop",
       },
       {
-        flag: "🇻🇺",
+        flag: "\n",
         country: "Вануату",
         visa: "Гражданство",
         desc: "Самая быстрая в мире программа гражданства за инвестиции.",
