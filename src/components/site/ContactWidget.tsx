@@ -50,7 +50,7 @@ export function ContactWidget() {
           ) : (
             <img
               src={ivanPhoto}
-              alt="Иван Савин — онлайн"
+              alt="Иван Городницкий — онлайн"
               className="relative h-full w-full rounded-full object-cover ring-2 ring-card"
             />
           )}

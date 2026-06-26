@@ -1,5 +1,10 @@
 import { useReveal } from "@/hooks/use-reveal";
 import ivan from "@/assets/expert-ivan.jpg";
+import teamAnna from "@/assets/team-anna.jpg";
+import teamMikhail from "@/assets/team-mikhail.jpg";
+import teamElena from "@/assets/team-elena.jpg";
+import teamDavid from "@/assets/team-david.jpg";
+import teamOlga from "@/assets/team-olga.jpg";
 import { Linkedin, Send } from "lucide-react";
 
 const team = [
@@ -7,31 +12,31 @@ const team = [
     name: "Анна Петрова",
     role: "Старший иммиграционный юрист",
     focus: "США O-1, EB-2 NIW",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop",
+    img: teamAnna,
   },
   {
     name: "Михаил Краузе",
     role: "Эксперт по визам талантов",
     focus: "UK Global Talent, Шенген",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop",
+    img: teamMikhail,
   },
   {
     name: "Елена Соколова",
     role: "Консультант по недвижимости",
     focus: "Греция, Кипр, Португалия",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80&auto=format&fit=crop",
+    img: teamElena,
   },
   {
     name: "Давид Аракелян",
     role: "Эксперт по репатриации",
     focus: "Армения, Израиль",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop",
+    img: teamDavid,
   },
   {
     name: "Ольга Никитина",
     role: "Эксперт по гражданству за инвестиции",
     focus: "Вануату, Сан-Томе, Турция",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&auto=format&fit=crop",
+    img: teamOlga,
   },
 ];
 
@@ -57,7 +62,7 @@ export function Experts() {
             <div className="absolute -inset-4 rounded-full bg-coral-gradient opacity-20 blur-2xl" />
             <img
               src={ivan}
-              alt="Иван Савин — CEO yrelo"
+              alt="Иван Городницкий — CEO yrelo"
               loading="lazy"
               width={320}
               height={320}
@@ -70,7 +75,7 @@ export function Experts() {
           <div>
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">Ваш эксперт</span>
             <h3 className="mt-2 font-display text-3xl font-bold text-primary md:text-4xl">
-              Иван Савин
+              Иван Городницкий
             </h3>
             <p className="mt-1 font-semibold text-foreground/80">
               Основатель и CEO yrelo, иммиграционный консультант с опытом 12+ лет
