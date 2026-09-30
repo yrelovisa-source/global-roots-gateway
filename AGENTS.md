@@ -1,0 +1,1 @@
+Keep the interactive world map in `WorldMap.tsx` with a local SVG land asset and country-program data colocated in the component, so it renders reliably on static hosting and works without external map services.

@@ -1,31 +1,9 @@
 import passportImg from "@/assets/passport.jpg";
 import caseImg from "@/assets/case-management.jpg";
 import consultantImg from "@/assets/consultant.jpg";
+import { WorldMap } from "@/components/site/WorldMap";
 import { useReveal } from "@/hooks/use-reveal";
 import { CheckCircle2, ShieldCheck, FileCheck, Clock } from "lucide-react";
-
-const dots = [
-  { top: "29%", left: "23%", label: "США" },
-  { top: "19%", left: "21%", label: "Канада" },
-  { top: "20%", left: "49%", label: "UK" },
-  { top: "21%", left: "51%", label: "Нидерланды" },
-  { top: "22%", left: "53%", label: "Германия" },
-  { top: "24%", left: "50%", label: "Франция" },
-  { top: "27%", left: "48%", label: "Испания" },
-  { top: "28%", left: "47%", label: "Португалия" },
-  { top: "29%", left: "56%", label: "Греция" },
-  { top: "27%", left: "55%", label: "Черногория" },
-  { top: "26%", left: "56%", label: "Сербия" },
-  { top: "28%", left: "60%", label: "Турция" },
-  { top: "31%", left: "59%", label: "Кипр" },
-  { top: "28%", left: "63%", label: "Армения" },
-  { top: "42%", left: "78%", label: "Таиланд" },
-  { top: "54%", left: "82%", label: "Бали" },
-  { top: "64%", left: "87%", label: "Австралия" },
-  { top: "56%", left: "35%", label: "Бразилия" },
-  { top: "67%", left: "30%", label: "Чили" },
-  { top: "69%", left: "32%", label: "Аргентина" },
-];
 
 export function Trust() {
   const ref = useReveal<HTMLDivElement>();
@@ -81,29 +59,11 @@ export function Trust() {
         <div>
           <div className="reveal mx-auto max-w-2xl text-center">
             <h3 className="font-display text-3xl font-bold text-primary md:text-4xl">
-              Помогаем мигрировать на 4 континентах
+              Помогаем мигрировать на 5 континентах
             </h3>
-            <p className="mt-3 text-muted-foreground">Кликните на точку — увидите программу страны.</p>
+            <p className="mt-3 text-muted-foreground">Наведите на страну или выберите её из списка — увидите программы и сможете записаться на консультацию.</p>
           </div>
-          <div className="reveal-scale relative mt-10 overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft md:p-10">
-            <div className="relative aspect-[2/1] w-full">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Equirectangular_projection_SW.jpg/1280px-Equirectangular_projection_SW.jpg"
-                alt="Карта мира"
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-multiply"
-              />
-              <div className="absolute inset-0 grid-bg opacity-40" />
-              {dots.map((d, i) => (
-                <a key={d.label} href="#consult" style={{ top: d.top, left: d.left, animationDelay: `${i * 120}ms` }} className="group absolute -translate-x-1/2 -translate-y-1/2">
-                  <span className="relative grid h-3.5 w-3.5 place-items-center rounded-full bg-coral pulse-ring" />
-                  <span className="absolute left-5 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold text-primary-foreground opacity-0 shadow-soft transition group-hover:opacity-100">
-                    {d.label}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
+          <WorldMap />
         </div>
 
         {/* Suitcase + checklist */}
