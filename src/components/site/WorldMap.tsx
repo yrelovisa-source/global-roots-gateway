@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Globe2, MapPin } from "lucide-react";
 import worldLand from "@/assets/world-land.svg";
 
@@ -43,10 +43,26 @@ const y = (lat: number) => ((85 - lat) / 145) * 100;
 export function WorldMap() {
   const [selected, setSelected] = useState("Испания");
   const current = destinations.find((d) => d.country === selected) ?? destinations[0];
+  const mapScrollRef = useRef<HTMLDivElement>(null);
+
+  const showDestination = (destination: Destination) => {
+    setSelected(destination.country);
+    const scroller = mapScrollRef.current;
+    if (scroller && scroller.scrollWidth > scroller.clientWidth) {
+      scroller.scrollTo({ left: scroller.scrollWidth * x(destination.longitude) / 100 - scroller.clientWidth / 2, behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    const scroller = mapScrollRef.current;
+    if (scroller && scroller.scrollWidth > scroller.clientWidth) {
+      scroller.scrollLeft = scroller.scrollWidth * x(-4) / 100 - scroller.clientWidth / 2;
+    }
+  }, []);
 
   return (
     <div className="reveal-scale mt-10 overflow-hidden rounded-3xl border border-border bg-card shadow-soft">
-      <div className="relative overflow-x-auto bg-sky/20">
+      <div ref={mapScrollRef} className="relative overflow-x-auto bg-sky/20" aria-label="Карта мира, прокрутите в сторону для других стран">
         <div className="relative aspect-[1200/510] min-w-[850px] overflow-hidden" aria-label="Интерактивная карта иммиграционных программ">
           <img src={worldLand} alt="Карта мира с расположением стран" className="absolute inset-0 h-full w-full" />
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(transparent_98%,var(--border)_100%),linear-gradient(90deg,transparent_98%,var(--border)_100%)] bg-[length:10%_20%] opacity-30" />
@@ -58,7 +74,7 @@ export function WorldMap() {
                 key={destination.country}
                 onMouseEnter={() => setSelected(destination.country)}
                 onFocus={() => setSelected(destination.country)}
-                onClick={() => setSelected(destination.country)}
+                onClick={() => showDestination(destination)}
                 aria-label={`${destination.country}: ${destination.programs.join(", ")}`}
                 aria-pressed={active}
                 className="group absolute z-10 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-coral"
@@ -75,6 +91,13 @@ export function WorldMap() {
           <div className="pointer-events-none absolute bottom-4 left-4 flex items-center gap-2 rounded-full border border-border bg-card/90 px-3 py-1.5 text-xs font-medium text-primary shadow-soft">
             <Globe2 className="h-4 w-4 text-coral" /> 25 направлений
           </div>
+          <div className="absolute bottom-4 right-4 z-20 hidden w-60 border border-border bg-card/95 p-4 shadow-soft backdrop-blur-sm lg:block" aria-live="polite">
+            <div className="flex items-center gap-1.5 text-sm font-bold text-primary"><MapPin className="h-4 w-4 text-coral" />{current.country}</div>
+            <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
+              {current.programs.map((program) => <li key={program}>• {program}</li>)}
+            </ul>
+            <a href="#consult" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-coral hover:underline">Бесплатная консультация <ArrowRight className="h-4 w-4" /></a>
+          </div>
         </div>
       </div>
       <div className="grid gap-6 border-t border-border p-5 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] md:p-8">
@@ -86,7 +109,7 @@ export function WorldMap() {
             {current.programs.map((program) => <li key={program} className="rounded-full border border-border bg-secondary px-3 py-1.5 text-xs font-medium text-secondary-foreground">{program}</li>)}
           </ul>
           <a href="#consult" className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-coral-gradient px-5 py-3 text-sm font-semibold text-coral-foreground shadow-coral transition hover:scale-[1.03]">
-            Консультация по {current.country === "Бали" ? "Бали" : current.country} <ArrowRight className="h-4 w-4" />
+            Получить консультацию <ArrowRight className="h-4 w-4" />
           </a>
         </div>
         <div className="border-t border-border pt-5 md:border-l md:border-t-0 md:pl-6 md:pt-0">
@@ -98,7 +121,7 @@ export function WorldMap() {
                 type="button"
                 onMouseEnter={() => setSelected(destination.country)}
                 onFocus={() => setSelected(destination.country)}
-                onClick={() => setSelected(destination.country)}
+                onClick={() => showDestination(destination)}
                 aria-pressed={selected === destination.country}
                 className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral ${selected === destination.country ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-primary hover:border-coral hover:text-coral"}`}
               >
