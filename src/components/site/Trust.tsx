@@ -59,7 +59,7 @@ export function Trust() {
         <div>
           <div className="reveal mx-auto max-w-2xl text-center">
             <h3 className="font-display text-3xl font-bold text-primary md:text-4xl">
-              Помогаем мигрировать на 4 континентах
+              Помогаем мигрировать на 5 континентах
             </h3>
             <p className="mt-3 text-muted-foreground">Наведите на страну или выберите её из списка — увидите программы и сможете записаться на консультацию.</p>
           </div>
