@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/yrelo-logo.png";
+import { BrandLogo } from "@/components/site/BrandLogo";
 
 const links = [
   { href: "#services", label: "Услуги" },
@@ -26,12 +26,12 @@ export function Nav() {
       }`}
     >
       <div
-        className={`mx-auto flex max-w-6xl items-center justify-between rounded-full px-5 py-3 transition-all duration-500 ${
+        className={`mx-auto flex max-w-6xl items-center justify-between rounded-lg border border-border/70 px-5 py-3 transition-all duration-500 ${
           scrolled ? "glass shadow-soft" : "bg-transparent"
         }`}
       >
         <a href="#top" className="flex items-center gap-2" aria-label="yrelo — на главную">
-          <img src={logo} alt="yrelo" width={120} height={36} className="h-9 w-auto" />
+          <BrandLogo />
         </a>
         <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
           {links.map((l) => (
@@ -51,7 +51,7 @@ export function Nav() {
           className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-coral-gradient px-5 py-2.5 text-sm font-semibold text-coral-foreground shadow-coral transition hover:scale-[1.04]"
         >
           <span className="relative z-10">Бесплатная консультация</span>
-          <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-0" />
+          <span className="absolute inset-0 -translate-x-full bg-primary-foreground/10 transition-transform duration-500 group-hover:translate-x-0" />
         </a>
       </div>
     </header>

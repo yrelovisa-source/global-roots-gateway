@@ -37,71 +37,47 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-display: "Manrope", "Inter", system-ui, sans-serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 1rem;
-
-  --background: oklch(0.99 0.005 260);
-  --foreground: oklch(0.18 0.04 265);
-
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 265);
-
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 265);
-
-  /* Deep navy (как на референсе) */
-  --primary: oklch(0.32 0.13 265);
-  --primary-foreground: oklch(0.99 0.01 260);
-
-  /* Coral / orange CTA */
-  --coral: oklch(0.72 0.19 35);
-  --coral-foreground: oklch(0.99 0.01 60);
-
-  /* Pink accent (облака) */
-  --accent: oklch(0.85 0.09 15);
-  --accent-foreground: oklch(0.18 0.04 265);
-
-  --sky: oklch(0.86 0.09 230);
-  --mint: oklch(0.82 0.12 165);
-  --sun: oklch(0.88 0.15 90);
-
-  --secondary: oklch(0.96 0.02 250);
-  --secondary-foreground: oklch(0.22 0.05 265);
-
-  --muted: oklch(0.96 0.01 250);
-  --muted-foreground: oklch(0.5 0.03 260);
-
-  --destructive: oklch(0.6 0.24 27);
-  --destructive-foreground: oklch(0.99 0.01 260);
-
-  --border: oklch(0.92 0.012 255);
-  --input: oklch(0.94 0.012 255);
-  --ring: oklch(0.72 0.19 35);
-
-  /* Gradients */
-  --gradient-hero: linear-gradient(135deg, oklch(0.86 0.09 230) 0%, oklch(0.92 0.07 15) 60%, oklch(0.95 0.05 60) 100%);
-  --gradient-card: linear-gradient(160deg, oklch(0.32 0.13 265) 0%, oklch(0.42 0.18 270) 100%);
-  --gradient-coral: linear-gradient(135deg, oklch(0.75 0.2 40) 0%, oklch(0.7 0.22 25) 100%);
-  --gradient-soft: linear-gradient(180deg, oklch(0.99 0.005 260) 0%, oklch(0.96 0.03 250) 100%);
-
-  --shadow-glow: 0 20px 60px -20px oklch(0.32 0.13 265 / 0.35);
-  --shadow-coral: 0 18px 40px -14px oklch(0.72 0.19 35 / 0.5);
-  --shadow-soft: 0 10px 30px -10px oklch(0.32 0.13 265 / 0.15);
+  --radius: 0.5rem;
+  --background: #101619;
+  --foreground: #f4f8f5;
+  --card: #1b2527;
+  --card-foreground: #f4f8f5;
+  --popover: #202c2d;
+  --popover-foreground: #f4f8f5;
+  --primary: #f4f8f5;
+  --primary-foreground: #101619;
+  --coral: #c6ff3d;
+  --coral-foreground: #101619;
+  --accent: #32e6d0;
+  --accent-foreground: #101619;
+  --sky: #32e6d0;
+  --mint: #32e6d0;
+  --sun: #c6ff3d;
+  --secondary: #182124;
+  --secondary-foreground: #f4f8f5;
+  --muted: #243033;
+  --muted-foreground: #aebcba;
+  --destructive: #ff797b;
+  --destructive-foreground: #101619;
+  --border: #3a4c4c;
+  --input: #3a4c4c;
+  --ring: #c6ff3d;
+  --gradient-hero: linear-gradient(135deg, #101619 0%, #1c3535 60%, #233e36 100%);
+  --gradient-card: linear-gradient(155deg, #202d2f 0%, #142023 100%);
+  --gradient-coral: linear-gradient(110deg, #c6ff3d 0%, #b5f337 100%);
+  --gradient-soft: linear-gradient(180deg, #101619 0%, #192628 100%);
+  --shadow-glow: 0 20px 60px -24px #32e6d055;
+  --shadow-coral: 0 14px 38px -18px #c6ff3daa;
+  --shadow-soft: 0 10px 30px -14px #05090a99;
 }
 
 .dark {
-  --background: oklch(0.16 0.04 265);
-  --foreground: oklch(0.98 0.01 250);
-  --card: oklch(0.22 0.05 265);
-  --card-foreground: oklch(0.98 0.01 250);
-  --primary: oklch(0.78 0.13 250);
-  --primary-foreground: oklch(0.16 0.04 265);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 16%);
+  color-scheme: dark;
 }
 
 @layer base {
@@ -114,7 +90,7 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0; }
   img { content-visibility: auto; }
   /* Skip rendering work for offscreen sections — huge perf win on mobile */
   section { content-visibility: auto; contain-intrinsic-size: 1px 800px; }
@@ -159,22 +135,22 @@
   .map-marker-ring { animation: pulse-ring 2.2s ease-out infinite; }
 
   .shimmer-text {
-    background: linear-gradient(90deg, var(--primary) 30%, var(--coral) 50%, var(--primary) 70%);
+    background: linear-gradient(90deg, var(--coral) 25%, var(--sky) 50%, var(--coral) 75%);
     background-size: 200% 100%;
     -webkit-background-clip: text; background-clip: text; color: transparent;
     animation: shimmer 4s linear infinite;
   }
 
   .glass {
-    background: oklch(1 0 0 / 0.7);
+    background: color-mix(in srgb, var(--background) 88%, transparent);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
   }
 
   .grid-bg {
     background-image:
-      linear-gradient(oklch(0.32 0.13 265 / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.32 0.13 265 / 0.06) 1px, transparent 1px);
+      linear-gradient(color-mix(in srgb, var(--sky) 12%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--sky) 12%, transparent) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 }
