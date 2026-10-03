@@ -33,7 +33,7 @@ export function Services() {
   return (
     <section id="services" ref={ref} className="relative py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="reveal mx-auto max-w-2xl text-center">
+        <div className="reveal max-w-2xl">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">Что мы делаем</span>
           <h2 className="mt-3 font-display text-4xl font-bold text-primary md:text-5xl">
             Программы, которые меняют жизнь
@@ -49,21 +49,21 @@ export function Services() {
               key={s.title}
               href="#consult"
               style={{ transitionDelay: `${i * 80}ms` }}
-              className="reveal group relative block overflow-hidden rounded-3xl bg-card-gradient text-primary-foreground shadow-soft transition-all hover:-translate-y-2 hover:shadow-glow"
+              className="reveal group relative block overflow-hidden border border-border bg-card-gradient text-primary-foreground shadow-soft transition-all hover:-translate-y-2 hover:border-coral hover:shadow-glow"
             >
               <div className="relative h-44 overflow-hidden">
                 <img
                   src={s.img}
                   alt={s.title}
                   loading="lazy"
-                  className="h-full w-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover opacity-80 saturate-75 transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
-                <span className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-2xl bg-white/15 backdrop-blur ring-1 ring-white/30">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
+                <span className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-md bg-background/60 backdrop-blur ring-1 ring-border">
                   <s.Icon className="h-5 w-5" />
                 </span>
               </div>
-              <div className="p-6">
+              <div className="border-l-2 border-coral p-6">
                 <h3 className="font-display text-xl font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm text-primary-foreground/80">{s.desc}</p>
                 <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-coral transition-all group-hover:gap-2">
