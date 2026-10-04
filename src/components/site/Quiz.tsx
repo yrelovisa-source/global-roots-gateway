@@ -85,7 +85,7 @@ export function Quiz() {
         s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
       const text =
-        `🔥 <b>Новая заявка yrelo.com</b>\n\n` +
+        `🔥 <b>Новая заявка Yrelo.com</b>\n\n` +
         `👤 <b>Имя:</b> ${esc(name.trim())}\n` +
         `📞 <b>Контакт:</b> ${esc(contact.trim())}\n` +
         `🌍 <b>Страна:</b> ${esc(labelOf(countries, country))}\n` +
@@ -252,9 +252,9 @@ export function Quiz() {
                 )}
               </div>
 
-              <aside className="hidden flex-col justify-between bg-card-gradient p-8 text-primary-foreground lg:flex">
+              <aside className="hidden flex-col justify-between border-l border-border bg-soft-gradient p-8 text-foreground lg:flex">
                 <div>
-                  <div className="text-xs uppercase tracking-widest text-primary-foreground/70">Что вы получите</div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">Что вы получите</div>
                   <ul className="mt-5 space-y-4">
                     {[
                       "2–3 рабочие программы под профиль",
@@ -271,7 +271,7 @@ export function Quiz() {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-10 rounded-2xl bg-white/10 p-4 ring-1 ring-white/15 backdrop-blur">
+                <div className="mt-10 rounded-lg bg-card p-4 ring-1 ring-border">
                   <div className="text-sm">Среднее время ответа</div>
                   <div className="mt-1 font-display text-2xl font-bold">2 минуты</div>
                 </div>

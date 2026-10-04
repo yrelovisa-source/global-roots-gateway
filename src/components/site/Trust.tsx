@@ -24,7 +24,7 @@ export function Trust() {
           </div>
 
           <div className="reveal order-1 lg:order-2">
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">Почему yrelo</span>
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-coral">Почему Yrelo</span>
             <h2 className="mt-3 font-display text-4xl font-bold text-primary md:text-5xl">
               Делаем переезд предсказуемым
             </h2>
@@ -90,7 +90,7 @@ export function Trust() {
           </div>
           <div className="reveal-scale relative">
             <div className="absolute -inset-8 rounded-full bg-sky/40 blur-3xl animate-blob" />
-            <img src={caseImg} alt="Команда yrelo сопровождает кейс" loading="lazy" className="relative animate-float-y rounded-3xl object-cover shadow-glow" />
+            <img src={caseImg} alt="Команда Yrelo сопровождает кейс" loading="lazy" className="relative animate-float-y rounded-3xl object-cover shadow-glow" />
           </div>
         </div>
 
@@ -98,7 +98,7 @@ export function Trust() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="reveal-scale relative order-2 lg:order-1">
             <div className="absolute inset-6 rounded-full bg-sky animate-blob" />
-            <img src={consultantImg} alt="Личный консультант" loading="lazy" className="relative mx-auto h-[420px] w-[420px] rounded-full object-cover shadow-glow ring-8 ring-white" />
+            <img src={consultantImg} alt="Личный консультант" loading="lazy" className="relative mx-auto h-[420px] w-[420px] rounded-full object-cover shadow-glow ring-8 ring-card" />
           </div>
           <div className="reveal order-1 lg:order-2">
             <h3 className="font-display text-3xl font-bold text-primary md:text-4xl">
