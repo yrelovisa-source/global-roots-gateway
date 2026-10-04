@@ -138,13 +138,13 @@ export function RealEstate() {
             >
               <div className="relative h-56 overflow-hidden">
                 <img src={it.img} alt={it.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/10 to-transparent" />
-                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-primary shadow-soft">
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent" />
+                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-card/90 px-3 py-1 text-xs font-semibold text-primary shadow-soft">
                   <span className="text-base leading-none">{it.flag}</span> {it.country}
                 </span>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <div className="font-display text-lg font-bold text-white drop-shadow">{it.title}</div>
-                  <div className="mt-1 text-xs text-white/85">{it.price}</div>
+                  <div className="font-display text-lg font-bold text-primary-foreground drop-shadow">{it.title}</div>
+                  <div className="mt-1 text-xs text-primary-foreground/85">{it.price}</div>
                 </div>
               </div>
               <div className="p-5">

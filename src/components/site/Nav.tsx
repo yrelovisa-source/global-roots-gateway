@@ -30,7 +30,7 @@ export function Nav() {
           scrolled ? "glass shadow-soft" : "bg-transparent"
         }`}
       >
-        <a href="#top" className="flex items-center gap-2" aria-label="yrelo — на главную">
+        <a href="#top" className="flex items-center gap-2" aria-label="Yrelo — на главную">
           <BrandLogo />
         </a>
         <nav className="hidden items-center gap-7 text-sm font-medium md:flex">

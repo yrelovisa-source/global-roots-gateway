@@ -1,1 +1,2 @@
 Keep the interactive world map in `WorldMap.tsx` with a local SVG land asset and country-program data colocated in the component, so it renders reliably on static hosting and works without external map services.
+Keep the reusable Yrelo logo in `BrandLogo.tsx` and use the same icon geometry for the favicon, so brand changes remain consistent across navigation, footer, and browser tabs.

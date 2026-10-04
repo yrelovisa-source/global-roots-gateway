@@ -1,30 +1,34 @@
 import { useReveal } from "@/hooks/use-reveal";
 import { ArrowRight, Briefcase, GraduationCap, Building2, Users } from "lucide-react";
+import talentImage from "@/assets/service-talent.jpg";
+import nomadImage from "@/assets/service-nomad.jpg";
+import educationImage from "@/assets/service-education.jpg";
+import businessImage from "@/assets/service-business.jpg";
 
 const services = [
   {
     title: "Визы талантов",
     desc: "США O-1A/O-1B, EB2-NIW, Global Talent UK — для специалистов с признанными достижениями.",
     Icon: Users,
-    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80&auto=format&fit=crop",
+    img: talentImage,
   },
   {
     title: "ВНЖ для кочевников",
     desc: "Digital nomad визы и резиденции через пассивный доход в странах ЕС.",
     Icon: Briefcase,
-    img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&auto=format&fit=crop",
+    img: nomadImage,
   },
   {
     title: "Образование за рубежом",
     desc: "Поступление в вузы, языковые и профкурсы с правом на работу и продление.",
     Icon: GraduationCap,
-    img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&auto=format&fit=crop",
+    img: educationImage,
   },
   {
     title: "Бизнес и стартапы",
     desc: "Открытие компаний и стартап-визы в США, UK, ЕС, Эмиратах и Сингапуре.",
     Icon: Building2,
-    img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80&auto=format&fit=crop",
+    img: businessImage,
   },
 ];
 
@@ -49,23 +53,24 @@ export function Services() {
               key={s.title}
               href="#consult"
               style={{ transitionDelay: `${i * 80}ms` }}
-              className="reveal group relative block overflow-hidden border border-border bg-card-gradient text-primary-foreground shadow-soft transition-all hover:-translate-y-2 hover:border-coral hover:shadow-glow"
+              className="reveal group relative block overflow-hidden border border-border bg-card-gradient text-card-foreground shadow-soft transition-all hover:-translate-y-2 hover:border-coral hover:shadow-glow"
             >
               <div className="relative h-44 overflow-hidden">
                 <img
                   src={s.img}
                   alt={s.title}
                   loading="lazy"
-                  className="h-full w-full object-cover opacity-80 saturate-75 transition-transform duration-700 group-hover:scale-110"
+                  width={1024}
+                  height={768}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
-                <span className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-md bg-background/60 backdrop-blur ring-1 ring-border">
+                <span className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-md bg-card/90 text-coral backdrop-blur ring-1 ring-border">
                   <s.Icon className="h-5 w-5" />
                 </span>
               </div>
               <div className="border-l-2 border-coral p-6">
                 <h3 className="font-display text-xl font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm text-primary-foreground/80">{s.desc}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                 <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-coral transition-all group-hover:gap-2">
                   Узнать подробнее <ArrowRight className="h-4 w-4" />
                 </span>

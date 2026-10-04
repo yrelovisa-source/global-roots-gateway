@@ -62,11 +62,11 @@ export function Experts() {
             <div className="absolute -inset-4 rounded-full bg-coral-gradient opacity-20 blur-2xl" />
             <img
               src={ivan}
-              alt="Иван Городницкий — CEO yrelo"
+              alt="Иван Городницкий — CEO Yrelo"
               loading="lazy"
               width={320}
               height={320}
-              className="relative h-72 w-72 rounded-full object-cover shadow-coral ring-8 ring-white"
+              className="relative h-72 w-72 rounded-full object-cover shadow-coral ring-8 ring-card"
             />
             <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 rounded-full bg-coral-gradient px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-coral-foreground shadow-coral">
               CEO
@@ -78,7 +78,7 @@ export function Experts() {
               Иван Городницкий
             </h3>
             <p className="mt-1 font-semibold text-foreground/80">
-              Основатель и CEO yrelo, иммиграционный консультант с опытом 12+ лет
+              Основатель и CEO Yrelo, иммиграционный консультант с опытом 12+ лет
             </p>
             <p className="mt-4 text-muted-foreground">
               Лично провёл более 800 кейсов: визы талантов США и UK, золотые визы ЕС,

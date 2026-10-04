@@ -42,38 +42,39 @@
 }
 
 :root {
+  color-scheme: light;
   --radius: 0.5rem;
-  --background: #101619;
-  --foreground: #f4f8f5;
-  --card: #1b2527;
-  --card-foreground: #f4f8f5;
-  --popover: #202c2d;
-  --popover-foreground: #f4f8f5;
-  --primary: #f4f8f5;
-  --primary-foreground: #101619;
-  --coral: #c6ff3d;
-  --coral-foreground: #101619;
-  --accent: #32e6d0;
-  --accent-foreground: #101619;
-  --sky: #32e6d0;
-  --mint: #32e6d0;
-  --sun: #c6ff3d;
-  --secondary: #182124;
-  --secondary-foreground: #f4f8f5;
-  --muted: #243033;
-  --muted-foreground: #aebcba;
-  --destructive: #ff797b;
-  --destructive-foreground: #101619;
-  --border: #3a4c4c;
-  --input: #3a4c4c;
-  --ring: #c6ff3d;
-  --gradient-hero: linear-gradient(135deg, #101619 0%, #1c3535 60%, #233e36 100%);
-  --gradient-card: linear-gradient(155deg, #202d2f 0%, #142023 100%);
-  --gradient-coral: linear-gradient(110deg, #c6ff3d 0%, #b5f337 100%);
-  --gradient-soft: linear-gradient(180deg, #101619 0%, #192628 100%);
-  --shadow-glow: 0 20px 60px -24px #32e6d055;
-  --shadow-coral: 0 14px 38px -18px #c6ff3daa;
-  --shadow-soft: 0 10px 30px -14px #05090a99;
+  --background: #f8fbf8;
+  --foreground: #172527;
+  --card: #ffffff;
+  --card-foreground: #172527;
+  --popover: #ffffff;
+  --popover-foreground: #172527;
+  --primary: #172527;
+  --primary-foreground: #ffffff;
+  --coral: #477b19;
+  --coral-foreground: #ffffff;
+  --accent: #0d8a83;
+  --accent-foreground: #ffffff;
+  --sky: #0d8a83;
+  --mint: #0d8a83;
+  --sun: #d3f565;
+  --secondary: #eff5f1;
+  --secondary-foreground: #172527;
+  --muted: #ecf2ed;
+  --muted-foreground: #596b69;
+  --destructive: #b42330;
+  --destructive-foreground: #ffffff;
+  --border: #d7e4db;
+  --input: #d7e4db;
+  --ring: #477b19;
+  --gradient-hero: linear-gradient(135deg, #f8fbf8 0%, #eaf8f1 60%, #e7f5e8 100%);
+  --gradient-card: linear-gradient(155deg, #ffffff 0%, #f4faf5 100%);
+  --gradient-coral: linear-gradient(110deg, #477b19 0%, #315f17 100%);
+  --gradient-soft: linear-gradient(180deg, #f8fbf8 0%, #edf7f1 100%);
+  --shadow-glow: 0 20px 60px -24px #0d8a8333;
+  --shadow-coral: 0 14px 38px -18px #477b1955;
+  --shadow-soft: 0 10px 30px -14px #17252733;
 }
 
 .dark {

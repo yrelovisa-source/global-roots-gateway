@@ -40,7 +40,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-5 text-xs text-muted-foreground">
-          <span>© {new Date().getFullYear()} yrelo. Все права защищены.</span>
+          <span>© {new Date().getFullYear()} Yrelo. Все права защищены.</span>
           <span>Не является юридической рекомендацией публичной оферты.</span>
         </div>
       </div>
