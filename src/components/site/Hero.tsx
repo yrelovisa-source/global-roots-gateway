@@ -12,15 +12,15 @@ export function Hero() {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section id="top" ref={ref} className="relative min-h-[740px] overflow-hidden border-b border-border pb-16 pt-36 md:min-h-[740px] md:pb-20 md:pt-44">
-      <img src={heroImg} alt="Путешественник на пути к новой жизни" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center opacity-35" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/45" />
+      <img src={heroImg} alt="Путешественник на пути к новой жизни" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center opacity-20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,0.75fr)]">
         <div className="reveal max-w-3xl">
           <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-coral">
-            <span className="h-px w-10 bg-coral" /> Иммиграционный центр yrelo
+            <span className="h-px w-10 bg-coral" /> Иммиграционный центр Yrelo
           </span>
           <h1 className="mt-8 text-balance font-display text-5xl font-bold uppercase leading-[0.98] text-primary sm:text-6xl lg:text-7xl">
             Переезд <span className="shimmer-text">без границ.</span><br />Жизнь по вашим правилам.
