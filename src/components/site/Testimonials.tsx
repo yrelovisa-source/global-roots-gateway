@@ -6,25 +6,21 @@ const reviews = [
     name: "Мария В.",
     role: "Product Designer → UK Global Talent",
     text: "Получили endorsement Tech Nation за 4 месяца. Помогли с портфолио, рекомендациями и подачей. Виза одобрена с первого раза.",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop",
   },
   {
     name: "Андрей К.",
     role: "Founder → США O-1A",
     text: "Команда Yrelo помогла собрать кейс на O-1A. Сейчас перевожу семью в Майами и готовим переход на EB-2 NIW.",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&auto=format&fit=crop",
   },
   {
     name: "Ольга Д.",
     role: "Семья → Greece Golden Visa",
     text: "Купили апартаменты в Афинах, ВНЖ на всю семью получили за 3 месяца. Дети уже в международной школе.",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80&auto=format&fit=crop",
   },
   {
     name: "Игорь М.",
     role: "Инвестор → Гражданство Турции",
     text: "Подобрали ликвидный объект в Стамбуле, оформили паспорт за 5 месяцев. Юристы вели всю сделку.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&auto=format&fit=crop",
   },
 ];
 
@@ -59,7 +55,7 @@ export function Testimonials() {
               <Quote className="absolute right-6 top-6 h-10 w-10 text-coral/60" />
               <p className="text-lg leading-relaxed text-foreground">{r.text}</p>
               <div className="mt-6 flex items-center gap-4">
-                <img src={r.avatar} alt={r.name} loading="lazy" className="h-12 w-12 rounded-full object-cover ring-2 ring-coral/40" />
+                <span aria-hidden="true" className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-coral font-display font-bold text-coral-foreground">{r.name.charAt(0)}</span>
                 <div>
                   <div className="font-semibold">{r.name}</div>
                   <div className="text-sm text-muted-foreground">{r.role}</div>
