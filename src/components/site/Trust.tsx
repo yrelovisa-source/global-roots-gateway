@@ -1,4 +1,4 @@
-import passportImg from "@/assets/passport.jpg";
+import passportImg from "@/assets/facefree-nomad.jpg";
 import caseImg from "@/assets/facefree-nomad.jpg";
 import consultantImg from "@/assets/facefree-business.jpg";
 import { WorldMap } from "@/components/site/WorldMap";
