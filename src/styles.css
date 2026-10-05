@@ -52,13 +52,14 @@
   --popover-foreground: #172527;
   --primary: #172527;
   --primary-foreground: #ffffff;
-  --coral: #477b19;
-  --coral-foreground: #ffffff;
-  --accent: #0d8a83;
+  --coral: #baff00;
+  --coral-foreground: #172527;
+  --accent-ink: #446600;
+  --accent: #00cdb5;
   --accent-foreground: #ffffff;
   --sky: #0d8a83;
   --mint: #0d8a83;
-  --sun: #d3f565;
+  --sun: #d7ff5f;
   --secondary: #eff5f1;
   --secondary-foreground: #172527;
   --muted: #ecf2ed;
@@ -67,13 +68,13 @@
   --destructive-foreground: #ffffff;
   --border: #d7e4db;
   --input: #d7e4db;
-  --ring: #477b19;
+  --ring: #85b800;
   --gradient-hero: linear-gradient(135deg, #f8fbf8 0%, #eaf8f1 60%, #e7f5e8 100%);
   --gradient-card: linear-gradient(155deg, #ffffff 0%, #f4faf5 100%);
-  --gradient-coral: linear-gradient(110deg, #477b19 0%, #315f17 100%);
+  --gradient-coral: linear-gradient(110deg, #baff00 0%, #d7ff5f 100%);
   --gradient-soft: linear-gradient(180deg, #f8fbf8 0%, #edf7f1 100%);
-  --shadow-glow: 0 20px 60px -24px #0d8a8333;
-  --shadow-coral: 0 14px 38px -18px #477b1955;
+  --shadow-glow: 0 20px 60px -24px #a3e60055;
+  --shadow-coral: 0 14px 38px -18px #a3e60088;
   --shadow-soft: 0 10px 30px -14px #17252733;
 }
 
@@ -98,6 +99,7 @@
 }
 
 @layer utilities {
+  .text-coral { color: var(--accent-ink); }
   .bg-hero-gradient { background: var(--gradient-hero); }
   .bg-card-gradient { background: var(--gradient-card); }
   .bg-coral-gradient { background: var(--gradient-coral); }
@@ -136,7 +138,7 @@
   .map-marker-ring { animation: pulse-ring 2.2s ease-out infinite; }
 
   .shimmer-text {
-    background: linear-gradient(90deg, var(--coral) 25%, var(--sky) 50%, var(--coral) 75%);
+    background: linear-gradient(90deg, var(--accent-ink) 25%, var(--sky) 50%, var(--accent-ink) 75%);
     background-size: 200% 100%;
     -webkit-background-clip: text; background-clip: text; color: transparent;
     animation: shimmer 4s linear infinite;
@@ -171,7 +173,7 @@
     background: none;
     -webkit-background-clip: initial;
     background-clip: initial;
-    color: var(--coral);
+    color: var(--accent-ink);
   }
 
   /* Soften GPU-heavy blurs on mobile */
@@ -191,6 +193,6 @@
   }
   .reveal, .reveal-scale { opacity: 1 !important; transform: none !important; }
   .shimmer-text {
-    background: none; -webkit-background-clip: initial; background-clip: initial; color: var(--coral);
+    background: none; -webkit-background-clip: initial; background-clip: initial; color: var(--accent-ink);
   }
 }

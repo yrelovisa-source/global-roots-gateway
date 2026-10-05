@@ -1,9 +1,9 @@
 import { useReveal } from "@/hooks/use-reveal";
 import { ArrowRight, Briefcase, GraduationCap, Building2, Users } from "lucide-react";
-import talentImage from "@/assets/service-talent.jpg";
-import nomadImage from "@/assets/service-nomad.jpg";
-import educationImage from "@/assets/service-education.jpg";
-import businessImage from "@/assets/service-business.jpg";
+import talentImage from "@/assets/facefree-talent.jpg";
+import nomadImage from "@/assets/facefree-nomad.jpg";
+import educationImage from "@/assets/facefree-campus.jpg";
+import businessImage from "@/assets/facefree-business.jpg";
 
 const services = [
   {

@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-clouds.jpg";
+import heroImg from "@/assets/facefree-hero.jpg";
 import { ArrowRight, Sparkles, Globe2, Star, MoveUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 
@@ -12,7 +12,7 @@ export function Hero() {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section id="top" ref={ref} className="relative min-h-[740px] overflow-hidden border-b border-border pb-16 pt-36 md:min-h-[740px] md:pb-20 md:pt-44">
-      <img src={heroImg} alt="Путешественник на пути к новой жизни" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center opacity-20" />
+      <img src={heroImg} alt="Панорама Барселоны и Средиземного моря" width={1536} height={1024} fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />

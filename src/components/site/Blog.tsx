@@ -1,11 +1,12 @@
 import { useReveal } from "@/hooks/use-reveal";
 import { ArrowUpRight } from "lucide-react";
+import talentImage from "@/assets/facefree-talent.jpg";
 
 const posts = [
   {
     title: "Как получить O-1A в США в 2026: чек-лист доказательств",
     excerpt: "Разбираем 8 критериев USCIS и реальные примеры досье, которые получают одобрение.",
-    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80&auto=format&fit=crop",
+    img: talentImage,
     tag: "США",
   },
   {

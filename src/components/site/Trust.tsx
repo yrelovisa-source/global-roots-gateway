@@ -1,6 +1,6 @@
-import passportImg from "@/assets/passport.jpg";
-import caseImg from "@/assets/case-management.jpg";
-import consultantImg from "@/assets/consultant.jpg";
+import passportImg from "@/assets/facefree-nomad.jpg";
+import caseImg from "@/assets/facefree-nomad.jpg";
+import consultantImg from "@/assets/facefree-business.jpg";
 import { WorldMap } from "@/components/site/WorldMap";
 import { useReveal } from "@/hooks/use-reveal";
 import { CheckCircle2, ShieldCheck, FileCheck, Clock } from "lucide-react";
@@ -90,7 +90,7 @@ export function Trust() {
           </div>
           <div className="reveal-scale relative">
             <div className="absolute -inset-8 rounded-full bg-sky/40 blur-3xl animate-blob" />
-            <img src={caseImg} alt="Команда Yrelo сопровождает кейс" loading="lazy" className="relative animate-float-y rounded-3xl object-cover shadow-glow" />
+            <img src={caseImg} alt="Документы и рабочее место для сопровождения переезда" loading="lazy" width={1024} height={768} className="relative animate-float-y rounded-3xl object-cover shadow-glow" />
           </div>
         </div>
 
@@ -98,7 +98,7 @@ export function Trust() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="reveal-scale relative order-2 lg:order-1">
             <div className="absolute inset-6 rounded-full bg-sky animate-blob" />
-            <img src={consultantImg} alt="Личный консультант" loading="lazy" className="relative mx-auto h-[420px] w-[420px] rounded-full object-cover shadow-glow ring-8 ring-card" />
+            <img src={consultantImg} alt="Офис иммиграционного сопровождения" loading="lazy" width={1024} height={768} className="relative mx-auto aspect-[4/3] w-full rounded-lg object-cover shadow-glow ring-8 ring-card" />
           </div>
           <div className="reveal order-1 lg:order-2">
             <h3 className="font-display text-3xl font-bold text-primary md:text-4xl">

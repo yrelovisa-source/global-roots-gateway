@@ -1,8 +1,8 @@
 import { useReveal } from "@/hooks/use-reveal";
 import { GraduationCap, ArrowRight, Award, Building2 } from "lucide-react";
-import eduSpain from "@/assets/edu-spain.jpg";
-import eduGermany from "@/assets/edu-germany.jpg";
-import eduNetherlands from "@/assets/edu-netherlands.jpg";
+import eduSpain from "@/assets/facefree-campus.jpg";
+import eduGermany from "@/assets/facefree-germany.jpg";
+import eduNetherlands from "@/assets/facefree-netherlands.jpg";
 
 type Item = {
   flag: string;
@@ -21,7 +21,7 @@ const items: Item[] = [
     title: "Школы-пансионы и университеты",
     desc: "Eton, Harrow, Westminster, топ-10 британских университетов. Подбор, подача, опекунство и виза Student / Child Student.",
     bullets: ["Boarding schools от 11 лет", "Russell Group университеты", "Опека и виза под ключ"],
-    img: "https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=900&q=80&auto=format&fit=crop",
+    img: eduSpain,
     tag: "Топ-выбор",
   },
   {
@@ -30,7 +30,7 @@ const items: Item[] = [
     title: "Graduate Route — работа после диплома",
     desc: "2 года рабочей визы после окончания UK университета без оффера. Путь к Skilled Worker и ILR.",
     bullets: ["2 года без оффера", "Любая работа", "Путь к ВНЖ"],
-    img: "https://images.unsplash.com/photo-1568667256549-094345857637?w=900&q=80&auto=format&fit=crop",
+    img: eduSpain,
   },
   {
     flag: "\n",
@@ -38,7 +38,7 @@ const items: Item[] = [
     title: "Частные школы Швейцарии",
     desc: "Le Rosey, Institut auf dem Rosenberg, Aiglon. Билингвальное обучение, IB / A-Level / Matura.",
     bullets: ["Сильнейшие школы Европы", "Семья получает ВНЖ", "Программы IB и A-Level"],
-    img: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=900&q=80&auto=format&fit=crop",
+    img: eduGermany,
   },
   {
     flag: "\n",
@@ -54,7 +54,7 @@ const items: Item[] = [
     title: "Bocconi, Politecnico, дизайн-академии",
     desc: "Bachelor и Master на английском. Доступная стоимость, гранты, виза с работой и стажировками.",
     bullets: ["От €4 000/год", "Английские программы", "Стажировки в ЕС"],
-    img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&q=80&auto=format&fit=crop",
+    img: eduGermany,
   },
   {
     flag: "\n",
@@ -71,7 +71,7 @@ const items: Item[] = [
     title: "Sciences Po, HEC, Сорбонна",
     desc: "Бакалавриат и магистратура на английском и французском. APS-виза на 12 месяцев после диплома.",
     bullets: ["Топ-вузы Европы", "Английские треки", "APS после диплома"],
-    img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=80&auto=format&fit=crop",
+    img: eduSpain,
   },
   {
     flag: "\n",
