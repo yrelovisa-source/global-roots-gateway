@@ -82,13 +82,13 @@ export function Hero() {
           <div className="reveal flex flex-col items-start gap-10">
             <div className="flex items-center gap-3">
               <span className="h-px w-12 bg-sky" />
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-sky">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-sky sm:text-sm">
                 Иммиграционный центр Yrelo
               </span>
             </div>
 
             <div className="space-y-6">
-              <h1 className="font-display text-5xl font-bold uppercase leading-[0.98] tracking-tight text-primary sm:text-6xl lg:text-7xl">
+              <h1 className="font-display text-4xl font-bold uppercase leading-[0.98] tracking-tight text-primary sm:text-6xl lg:text-7xl">
                 Масштабируйте
                 <br />
                 <span className="relative inline-block">
