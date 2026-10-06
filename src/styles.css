@@ -108,6 +108,21 @@
   .shadow-coral { box-shadow: var(--shadow-coral); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
 
+  .dot-bg {
+    background-image: radial-gradient(color-mix(in srgb, var(--sky) 100%, transparent) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Hero cycling word */
+  @keyframes word-slide {
+    0%, 22% { transform: translateY(0); }
+    28%, 47% { transform: translateY(-1.1em); }
+    53%, 72% { transform: translateY(-2.2em); }
+    78%, 99.99% { transform: translateY(-3.3em); }
+    100% { transform: translateY(0); }
+  }
+  .animate-word-slide { animation: word-slide 9s cubic-bezier(.85,0,.15,1) infinite; }
+
   .text-balance { text-wrap: balance; }
 
   /* On-scroll reveal */
