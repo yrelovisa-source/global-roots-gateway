@@ -99,7 +99,7 @@ export function Hero() {
                   />
                 </span>{" "}
                 <span className="inline-flex h-[1.1em] overflow-hidden align-top text-sky">
-                  <span className="animate-word-slide inline-flex flex-col">
+                  <span className="animate-word-slide inline-flex h-[4.4em] flex-col">
                     <span className="flex h-[1.1em] items-center">свободу</span>
                     <span className="flex h-[1.1em] items-center">жизнь</span>
                     <span className="flex h-[1.1em] items-center">миграцию</span>
