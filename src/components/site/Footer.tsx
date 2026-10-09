@@ -14,19 +14,19 @@ export function Footer() {
         <div>
           <div className="text-sm font-semibold uppercase tracking-widest text-coral">Программы</div>
           <ul className="mt-4 space-y-2 text-sm text-foreground/80">
-            <li><a href="#programs" className="hover:text-coral">США O-1A / O-1B</a></li>
-            <li><a href="#programs" className="hover:text-coral">UK Global Talent</a></li>
-            <li><a href="#programs" className="hover:text-coral">Гражданства за инвестиции</a></li>
-            <li><a href="#realestate" className="hover:text-coral">ВНЖ через недвижимость</a></li>
+            <li><a href="/#programs" className="hover:text-coral">США O-1A / O-1B</a></li>
+            <li><a href="/#programs" className="hover:text-coral">UK Global Talent</a></li>
+            <li><a href="/#programs" className="hover:text-coral">Гражданства за инвестиции</a></li>
+            <li><a href="/#realestate" className="hover:text-coral">ВНЖ через недвижимость</a></li>
           </ul>
         </div>
         <div>
           <div className="text-sm font-semibold uppercase tracking-widest text-coral">Компания</div>
           <ul className="mt-4 space-y-2 text-sm text-foreground/80">
-            <li><a href="#services" className="hover:text-coral">Услуги</a></li>
-            <li><a href="#reviews" className="hover:text-coral">Отзывы</a></li>
-            <li><a href="#blog" className="hover:text-coral">Блог</a></li>
-            <li><a href="#consult" className="hover:text-coral">Контакты</a></li>
+            <li><a href="/#services" className="hover:text-coral">Услуги</a></li>
+            <li><a href="/#reviews" className="hover:text-coral">Отзывы</a></li>
+            <li><a href="/#blog" className="hover:text-coral">Блог</a></li>
+            <li><a href="/#consult" className="hover:text-coral">Контакты</a></li>
           </ul>
         </div>
         <div>
