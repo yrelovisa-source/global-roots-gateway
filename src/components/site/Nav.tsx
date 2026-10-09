@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 
 const links = [
-  { href: "#services", label: "Услуги" },
-  { href: "#programs", label: "Программы" },
-  { href: "#education", label: "Образование" },
-  { href: "#realestate", label: "Недвижимость" },
-  { href: "#reviews", label: "Отзывы" },
-  { href: "#blog", label: "Блог" },
+  { href: "/#services", label: "Услуги" },
+  { href: "/#programs", label: "Программы" },
+  { href: "/#education", label: "Образование" },
+  { href: "/#realestate", label: "Недвижимость" },
+  { href: "/#reviews", label: "Отзывы" },
+  { href: "/#blog", label: "Блог" },
 ];
 
 export function Nav() {
