@@ -30,7 +30,7 @@ export function Nav() {
           scrolled ? "glass shadow-soft" : "bg-transparent"
         }`}
       >
-        <a href="#top" className="flex items-center gap-2" aria-label="Yrelo — на главную">
+        <a href="/#top" className="flex items-center gap-2" aria-label="Yrelo — на главную">
           <BrandLogo />
         </a>
         <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
@@ -47,7 +47,7 @@ export function Nav() {
           ))}
         </nav>
         <a
-          href="#consult"
+          href="/#consult"
           className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-coral-gradient px-5 py-2.5 text-sm font-semibold text-coral-foreground shadow-coral transition hover:scale-[1.04]"
         >
           <span className="relative z-10">Бесплатная консультация</span>
