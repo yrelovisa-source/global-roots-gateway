@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useReveal } from "@/hooks/use-reveal";
 import { ArrowLeft, ArrowRight, Check, Sparkles, Loader2 } from "lucide-react";
 
@@ -43,6 +44,7 @@ const timing = [
 
 export function Quiz() {
   const ref = useReveal<HTMLDivElement>();
+  const navigate = useNavigate();
   const [step, setStep] = useState(0);
   const [country, setCountry] = useState<string | null>(null);
   const [goal, setGoal] = useState<string | null>(null);
@@ -106,6 +108,7 @@ export function Quiz() {
       const res = await resp.json().catch(() => ({ ok: false }));
       if (resp.ok && res?.ok) {
         setSent(true);
+        navigate("/spasibo", { state: { name: name.trim() } });
       } else {
         const description = typeof res?.description === "string" ? res.description : "";
         const hint = description.includes("chat not found")
