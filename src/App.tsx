@@ -11,6 +11,7 @@ import { Blog } from "@/components/site/Blog";
 import { Quiz } from "@/components/site/Quiz";
 import { Footer } from "@/components/site/Footer";
 import { ContactWidget } from "@/components/site/ContactWidget";
+import { ProgramDirectory } from "@/components/site/ProgramDirectory";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <Services />
       <Trust />
       <Programs />
+      <ProgramDirectory />
       <Education />
       <RealEstate />
       <Experts />
