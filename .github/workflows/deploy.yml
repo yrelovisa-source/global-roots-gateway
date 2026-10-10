@@ -29,6 +29,7 @@ jobs:
           test -n "$VITE_TELEGRAM_BOT_TOKEN" || (echo "Missing VITE_TELEGRAM_BOT_TOKEN repository secret" && exit 1)
           test -n "$VITE_TELEGRAM_CHAT_ID" || (echo "Missing VITE_TELEGRAM_CHAT_ID repository secret" && exit 1)
           bun run build
+          bun scripts/seo-pages.ts
       - name: Copy index.html to 404.html (SPA fallback)
         run: cp dist/index.html dist/404.html
       - name: Keep custom domain on GitHub Pages
