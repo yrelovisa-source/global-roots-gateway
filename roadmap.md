@@ -1,4 +1,8 @@
 # Current tasks
+- [ ] Replace the quiz with the shared enquiry form and keep consultation links working.
+- [ ] Add hover dropdown navigation and an accessible mobile hamburger menu.
+- [ ] Make expert chat and free consultation visible, respecting reduced motion.
+- [ ] Reduce page image weight and verify desktop/mobile navigation and enquiry flow.
 - [x] Apply neon lime accents while preserving the light background and readable text.
 - [x] Replace face-containing imagery outside contacts and team.
 - [x] Check image loading, layout and consultation links on desktop and mobile.
