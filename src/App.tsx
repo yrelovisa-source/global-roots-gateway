@@ -8,7 +8,7 @@ import { RealEstate } from "@/components/site/RealEstate";
 import { Experts } from "@/components/site/Experts";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Blog } from "@/components/site/Blog";
-import { Quiz } from "@/components/site/Quiz";
+import { Consultation } from "@/components/site/Consultation";
 import { Footer } from "@/components/site/Footer";
 import { ContactWidget } from "@/components/site/ContactWidget";
 import { ProgramDirectory } from "@/components/site/ProgramDirectory";
@@ -27,7 +27,7 @@ export default function App() {
       <Experts />
       <Testimonials />
       <Blog />
-      <Quiz />
+      <Consultation />
       <Footer />
       <ContactWidget />
     </main>
