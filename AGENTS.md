@@ -1,2 +1,4 @@
 Keep the interactive world map in `WorldMap.tsx` with a local SVG land asset and country-program data colocated in the component, so it renders reliably on static hosting and works without external map services.
+Use the shared LeadForm on the homepage and program pages, preserving consultation anchors and navigating to the thank-you page only after successful delivery, so enquiries have one consistent flow.
+Keep route-aware hash scrolling in ScrollToLocation and load secondary routes lazily, so navigation scrolls correctly without loading every page upfront.
 Keep the reusable Yrelo logo in `BrandLogo.tsx` and use the same icon geometry for the favicon, so brand changes remain consistent across navigation, footer, and browser tabs.- Program landing pages are driven by `src/data/programs.ts` (routes `/programmy/:slug`), and `scripts/seo-pages.ts` writes per-route static HTML, sitemap and robots after build — so crawlers on static GitHub Pages see per-page metadata.
