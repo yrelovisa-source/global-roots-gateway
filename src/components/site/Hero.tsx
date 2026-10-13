@@ -119,9 +119,9 @@ export function Hero() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#consult"
-                className="group relative inline-flex max-w-full items-center gap-3 bg-coral-gradient px-4 py-4 text-sm font-bold text-primary shadow-coral transition-all hover:scale-[1.03] sm:px-8 sm:text-base"
+                className="group relative inline-flex items-center gap-3 overflow-hidden bg-coral-gradient px-8 py-4 text-base font-bold uppercase tracking-wider text-primary shadow-coral transition-all hover:scale-[1.03]"
               >
-                <span className="online-indicator h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" /> Бесплатная консультация
+                Бесплатная консультация
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
               <a

@@ -14,21 +14,19 @@ export function Footer() {
         <div>
           <div className="text-sm font-semibold uppercase tracking-widest text-coral">Программы</div>
           <ul className="mt-4 space-y-2 text-sm text-foreground/80">
-            <li><a href="/programmy/ssha-o1-eb2-niw" className="hover:text-coral">США O-1A / O-1B</a></li>
-            <li><a href="/programmy/velikobritaniya-global-talent" className="hover:text-coral">UK Global Talent</a></li>
-            <li><a href="/programmy/ispaniya-digital-nomad" className="hover:text-coral">ВНЖ Испании кочевника</a></li>
-            <li><a href="/programmy/vtoroe-grazhdanstvo-vanuatu-san-tome" className="hover:text-coral">Гражданства за инвестиции</a></li>
-            <li><a href="/programmy/grecia-zolotaya-viza" className="hover:text-coral">ВНЖ через недвижимость</a></li>
-            <li><a href="/#all-programs" className="hover:text-coral">Все программы →</a></li>
+            <li><a href="#programs" className="hover:text-coral">США O-1A / O-1B</a></li>
+            <li><a href="#programs" className="hover:text-coral">UK Global Talent</a></li>
+            <li><a href="#programs" className="hover:text-coral">Гражданства за инвестиции</a></li>
+            <li><a href="#realestate" className="hover:text-coral">ВНЖ через недвижимость</a></li>
           </ul>
         </div>
         <div>
           <div className="text-sm font-semibold uppercase tracking-widest text-coral">Компания</div>
           <ul className="mt-4 space-y-2 text-sm text-foreground/80">
-            <li><a href="/#services" className="hover:text-coral">Услуги</a></li>
-            <li><a href="/#reviews" className="hover:text-coral">Отзывы</a></li>
-            <li><a href="/#blog" className="hover:text-coral">Блог</a></li>
-            <li><a href="/#consult" className="hover:text-coral">Контакты</a></li>
+            <li><a href="#services" className="hover:text-coral">Услуги</a></li>
+            <li><a href="#reviews" className="hover:text-coral">Отзывы</a></li>
+            <li><a href="#blog" className="hover:text-coral">Блог</a></li>
+            <li><a href="#consult" className="hover:text-coral">Контакты</a></li>
           </ul>
         </div>
         <div>

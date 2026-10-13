@@ -96,8 +96,6 @@
   img { content-visibility: auto; }
   /* Skip rendering work for offscreen sections — huge perf win on mobile */
   section { content-visibility: auto; contain-intrinsic-size: 1px 800px; }
-  section[id], form[id] { scroll-margin-top: 112px; }
-  #top { content-visibility: visible; }
 }
 
 @layer utilities {
@@ -124,8 +122,6 @@
     100% { transform: translateY(0); }
   }
   .animate-word-slide { animation: word-slide 9s cubic-bezier(.85,0,.15,1) infinite; }
-  @keyframes online-glow { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
-  .online-indicator { animation: online-glow 2.8s ease-in-out infinite; }
 
   .text-balance { text-wrap: balance; }
 
