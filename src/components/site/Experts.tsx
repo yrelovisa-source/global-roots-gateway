@@ -1,11 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
 import ivan from "@/assets/expert-ivan.jpg";
-import teamOffice from "@/assets/team-office.jpg";
-import teamAnna from "@/assets/team-anna.jpg";
-import teamMikhail from "@/assets/team-mikhail.jpg";
-import teamElena from "@/assets/team-elena.jpg";
-import teamDavid from "@/assets/team-david.jpg";
-import teamOlga from "@/assets/team-olga.jpg";
 import { Linkedin, Send } from "lucide-react";
 
 const team = [
@@ -13,31 +7,26 @@ const team = [
     name: "Анна Петрова",
     role: "Старший иммиграционный юрист",
     focus: "США O-1, EB-2 NIW",
-    img: teamAnna,
   },
   {
     name: "Михаил Краузе",
     role: "Эксперт по визам талантов",
     focus: "UK Global Talent, Шенген",
-    img: teamMikhail,
   },
   {
     name: "Елена Соколова",
     role: "Консультант по недвижимости",
     focus: "Греция, Кипр, Португалия",
-    img: teamElena,
   },
   {
     name: "Давид Аракелян",
     role: "Эксперт по репатриации",
     focus: "Армения, Израиль",
-    img: teamDavid,
   },
   {
     name: "Ольга Никитина",
     role: "Эксперт по гражданству за инвестиции",
     focus: "Вануату, Сан-Томе, Турция",
-    img: teamOlga,
   },
 ];
 
@@ -100,23 +89,6 @@ export function Experts() {
           </div>
         </div>
 
-        {/* Team office photo */}
-        <div className="reveal-scale relative mt-14 overflow-hidden rounded-3xl border border-border shadow-glow">
-          <img
-            src={teamOffice}
-            alt="Команда Yrelo в офисе обсуждает кейс клиента"
-            loading="lazy"
-            width={1536}
-            height={1024}
-            className="h-64 w-full object-cover sm:h-80 md:h-[420px]"
-          />
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent p-6 md:p-8">
-            <p className="font-display text-lg font-bold text-background md:text-2xl">
-              Команда Yrelo за одним столом — ваш кейс ведём лично
-            </p>
-          </div>
-        </div>
-
         {/* Team grid */}
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {team.map((m, i) => (
@@ -125,14 +97,10 @@ export function Experts() {
               style={{ transitionDelay: `${i * 80}ms` }}
               className="reveal group overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition hover:-translate-y-2 hover:shadow-glow"
             >
-              <div className="relative aspect-square overflow-hidden">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
+              <div className="grid aspect-square place-items-center bg-secondary">
+                <span className="grid h-20 w-20 place-items-center rounded-full bg-coral-gradient font-display text-3xl font-bold text-primary shadow-coral">
+                  {m.name.charAt(0)}
+                </span>
               </div>
               <div className="p-5">
                 <div className="font-display text-lg font-bold text-primary">{m.name}</div>
