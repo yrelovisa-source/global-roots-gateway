@@ -1,5 +1,6 @@
 import { useReveal } from "@/hooks/use-reveal";
 import ivan from "@/assets/expert-ivan.jpg";
+import teamOffice from "@/assets/team-office.jpg";
 import teamAnna from "@/assets/team-anna.jpg";
 import teamMikhail from "@/assets/team-mikhail.jpg";
 import teamElena from "@/assets/team-elena.jpg";
@@ -96,6 +97,23 @@ export function Experts() {
                 <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Team office photo */}
+        <div className="reveal-scale relative mt-14 overflow-hidden rounded-3xl border border-border shadow-glow">
+          <img
+            src={teamOffice}
+            alt="Команда Yrelo в офисе обсуждает кейс клиента"
+            loading="lazy"
+            width={1536}
+            height={1024}
+            className="h-64 w-full object-cover sm:h-80 md:h-[420px]"
+          />
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent p-6 md:p-8">
+            <p className="font-display text-lg font-bold text-background md:text-2xl">
+              Команда Yrelo за одним столом — ваш кейс ведём лично
+            </p>
           </div>
         </div>
 
