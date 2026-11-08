@@ -36,6 +36,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-whatsapp: var(--whatsapp);
+  --color-telegram: var(--telegram);
+  --color-messenger-foreground: var(--messenger-foreground);
 
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
@@ -69,6 +72,9 @@
   --border: #d7e4db;
   --input: #d7e4db;
   --ring: #85b800;
+  --whatsapp: #087e40;
+  --telegram: #ffe24a;
+  --messenger-foreground: #ffffff;
   --gradient-hero: linear-gradient(135deg, #f8fbf8 0%, #eaf8f1 60%, #e7f5e8 100%);
   --gradient-card: linear-gradient(155deg, #ffffff 0%, #f4faf5 100%);
   --gradient-coral: linear-gradient(110deg, #baff00 0%, #d7ff5f 100%);
@@ -84,7 +90,7 @@
 
 @layer base {
   * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 170px; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
