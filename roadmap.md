@@ -1,4 +1,7 @@
 # Current tasks
+- [ ] Diagnose the outdated GitHub Pages logo and remove deployment blockers.
+- [ ] Remove colleagues' avatars while preserving their text and Ivan's photo.
+- [ ] Send consultation enquiries securely using the saved new Telegram bot token and verify delivery.
 - [x] Apply neon lime accents while preserving the light background and readable text.
 - [x] Replace face-containing imagery outside contacts and team.
 - [x] Check image loading, layout and consultation links on desktop and mobile.
