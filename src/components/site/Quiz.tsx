@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { ArrowLeft, ArrowRight, Check, Sparkles, Loader2 } from "lucide-react";
+import { sendEnquiry } from "@/lib/enquiry";
 
 const countries = [
   { id: "usa", flag: "\n", label: "США" },
@@ -73,50 +74,17 @@ export function Quiz() {
       const labelOf = <T extends { id: string; label: string }>(arr: T[], id: string | null) =>
         arr.find((x) => x.id === id)?.label ?? id ?? "";
 
-      const token = import.meta.env.VITE_TELEGRAM_BOT_TOKEN as string | undefined;
-      const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID as string | undefined;
-      if (!token || !chatId) {
-        setError("Форма не настроена. Свяжитесь с нами через WhatsApp или Telegram.");
-        setSending(false);
-        return;
-      }
-
-      const esc = (s: string) =>
-        s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-      const text =
-        `🔥 <b>Новая заявка Yrelo.com</b>\n\n` +
-        `👤 <b>Имя:</b> ${esc(name.trim())}\n` +
-        `📞 <b>Контакт:</b> ${esc(contact.trim())}\n` +
-        `🌍 <b>Страна:</b> ${esc(labelOf(countries, country))}\n` +
-        `🎯 <b>Цель:</b> ${esc(labelOf(goals, goal))}\n` +
-        `💰 <b>Бюджет:</b> ${esc(labelOf(budgets, budget))}\n` +
-        `⏱ <b>Срок:</b> ${esc(labelOf(timing, time))}`;
-
-      const resp = await fetch(`https://api.telegram.org/bot${encodeURIComponent(token)}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text,
-          parse_mode: "HTML",
-          disable_web_page_preview: true,
-        }),
+      await sendEnquiry({
+        name: name.trim(),
+        contact: contact.trim(),
+        country: labelOf(countries, country),
+        goal: labelOf(goals, goal),
+        budget: labelOf(budgets, budget),
+        time: labelOf(timing, time),
       });
-      const res = await resp.json().catch(() => ({ ok: false }));
-      if (resp.ok && res?.ok) {
-        setSent(true);
-      } else {
-        const description = typeof res?.description === "string" ? res.description : "";
-        const hint = description.includes("chat not found")
-          ? "Проверьте VITE_TELEGRAM_CHAT_ID: бот должен быть добавлен в чат или пользователь должен сначала написать боту."
-          : description.includes("Unauthorized")
-            ? "Проверьте VITE_TELEGRAM_BOT_TOKEN в GitHub Secrets."
-            : "Напишите нам напрямую в WhatsApp или Telegram.";
-        setError(`Не удалось отправить заявку. ${hint}`);
-      }
-    } catch {
-      setError("Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
+      setSent(true);
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
     } finally {
       setSending(false);
     }
@@ -222,8 +190,8 @@ export function Quiz() {
                       <h3 className="font-display text-2xl font-bold text-primary">Куда отправить стратегию?</h3>
                       <p className="mt-1 text-sm text-muted-foreground">Свяжемся в течение часа. Ваши данные защищены.</p>
                       <div className="mt-6 space-y-3">
-                        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Ваше имя" className="w-full rounded-2xl border-2 border-border bg-card px-5 py-4 text-base outline-none transition focus:border-coral" />
-                        <input value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Telegram, WhatsApp или email" className="w-full rounded-2xl border-2 border-border bg-card px-5 py-4 text-base outline-none transition focus:border-coral" />
+                        <input value={name} maxLength={100} onChange={(e) => setName(e.target.value)} placeholder="Ваше имя" className="w-full rounded-2xl border-2 border-border bg-card px-5 py-4 text-base outline-none transition focus:border-coral" />
+                        <input value={contact} maxLength={255} onChange={(e) => setContact(e.target.value)} placeholder="Telegram, WhatsApp или email" className="w-full rounded-2xl border-2 border-border bg-card px-5 py-4 text-base outline-none transition focus:border-coral" />
                       </div>
                     </>
                   )}

@@ -97,11 +97,6 @@ export function Experts() {
               style={{ transitionDelay: `${i * 80}ms` }}
               className="reveal group overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition hover:-translate-y-2 hover:shadow-glow"
             >
-              <div className="grid aspect-square place-items-center bg-secondary">
-                <span className="grid h-20 w-20 place-items-center rounded-full bg-coral-gradient font-display text-3xl font-bold text-primary shadow-coral">
-                  {m.name.charAt(0)}
-                </span>
-              </div>
               <div className="p-5">
                 <div className="font-display text-lg font-bold text-primary">{m.name}</div>
                 <div className="mt-1 text-xs font-semibold uppercase tracking-widest text-coral">{m.role}</div>

@@ -1,4 +1,9 @@
 # Current tasks
+- [x] Diagnose the outdated GitHub Pages logo and remove old Telegram-secret build requirements.
+- [x] Remove colleagues' avatars while preserving their text and Ivan's photo.
+- [x] Send consultation enquiries securely using the saved new Telegram bot token.
+- [ ] Verify successful Telegram delivery: Telegram rejects the saved destination; user must start the new bot or add it to the destination chat.
+- [ ] Verify updated logo on GitHub Pages: requires syncing changes and a successful GitHub Pages deployment outside this sandbox.
 - [x] Apply neon lime accents while preserving the light background and readable text.
 - [x] Replace face-containing imagery outside contacts and team.
 - [x] Check image loading, layout and consultation links on desktop and mobile.

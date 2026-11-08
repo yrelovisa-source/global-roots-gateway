@@ -23,12 +23,11 @@ jobs:
       - run: bun install --frozen-lockfile
       - name: Build
         env:
-          VITE_TELEGRAM_BOT_TOKEN: ${{ secrets.VITE_TELEGRAM_BOT_TOKEN }}
-          VITE_TELEGRAM_CHAT_ID: ${{ secrets.VITE_TELEGRAM_CHAT_ID }}
-        run: |
-          test -n "$VITE_TELEGRAM_BOT_TOKEN" || (echo "Missing VITE_TELEGRAM_BOT_TOKEN repository secret" && exit 1)
-          test -n "$VITE_TELEGRAM_CHAT_ID" || (echo "Missing VITE_TELEGRAM_CHAT_ID repository secret" && exit 1)
-          bun run build
+          VITE_SUPABASE_URL: https://mipotgueexjaenseuxwt.supabase.co
+          VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_xNZ8MfI4Jiq1lPbAhdUvbA_Ysuco2zh
+        run: bun run build
+      - name: Record deployed revision
+        run: printf '%s\n' "$GITHUB_SHA" > dist/version.txt
       - name: Copy index.html to 404.html (SPA fallback)
         run: cp dist/index.html dist/404.html
       - name: Keep custom domain on GitHub Pages
