@@ -1,6 +1,6 @@
 # Current tasks
-- [ ] Make Yrelo.com more visible and adapt the header/footer to the supplied reference.
-- [ ] Update WhatsApp, Telegram, community links and contact cities; verify desktop/mobile interactions.
+- [x] Make Yrelo.com more visible and adapt the header/footer to the supplied reference.
+- [x] Update WhatsApp, Telegram, community links and contact cities; verify desktop/mobile interactions.
 - [x] Diagnose the outdated GitHub Pages logo and remove old Telegram-secret build requirements.
 - [x] Remove colleagues' avatars while preserving their text and Ivan's photo.
 - [x] Send consultation enquiries securely using the saved new Telegram bot token.
