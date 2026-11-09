@@ -1,5 +1,5 @@
 Keep the interactive world map in `WorldMap.tsx` with a local SVG land asset and country-program data colocated in the component, so it renders reliably on static hosting and works without external map services.
 Keep the reusable Yrelo logo as the trimmed image `src/assets/logo.png`, shown via `BrandLogo.tsx` in nav and footer, and derive `public/favicon.png` from the same file's emblem, so brand changes remain consistent across navigation, footer, and browser tabs.
-Render the domain suffix through BrandLogo and keep messenger URLs and navigation groups in SiteLinks.tsx so header, footer and contact widget stay consistent.
+Keep the full domain lettering in the single logo image rendered by BrandLogo so its baseline stays consistent at every size; keep messenger URLs and navigation groups in SiteLinks.tsx so header, footer and contact widget stay consistent.
 Send public consultation enquiries through the Lovable Cloud `telegram-enquiry` function; read Telegram credentials only from server secrets so GitHub Pages never embeds bot tokens.
 Configure only public Cloud connection settings in the Pages workflow and include version.txt with the deployed revision to diagnose stale releases without exposing secrets.
