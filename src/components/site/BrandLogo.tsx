@@ -6,7 +6,7 @@ export function BrandLogo({ compact = false }: { compact?: boolean }) {
       <img
         src={logo}
         alt="Yrelo.com"
-        width={1380}
+        width={1425}
         height={351}
         className={`w-auto ${compact ? "h-10" : "h-12 sm:h-14"}`}
       />
