@@ -17,6 +17,7 @@ export function Nav() {
           <Button asChild variant="outline" size="icon" className="rounded-full" title="Написать в Telegram"><a href={contactLinks.telegram} target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram"><Send /></a></Button>
           <Button asChild variant="outline" size="icon" className="rounded-full" title="Написать в WhatsApp"><a href={contactLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp"><MessageCircle /></a></Button>
         </div>
+        <Button asChild variant="lime" size="sm" className="ml-auto animate-cta-pulse whitespace-nowrap px-3 text-xs lg:hidden"><a href="#consult" onClick={() => setOpen(false)}>Консультация</a></Button>
         <Button variant="outline" size="icon" className="shrink-0 lg:hidden" aria-label={open ? "Закрыть меню" : "Открыть меню"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button>
       </div>
       <nav aria-label="Основное меню" className="mx-auto mb-3 hidden max-w-6xl items-center justify-between rounded-lg border border-border bg-card px-3 shadow-soft lg:flex">

@@ -1,6 +1,4 @@
-import passportImg from "@/assets/facefree-nomad.jpg";
-import caseImg from "@/assets/facefree-nomad.jpg";
-import consultantImg from "@/assets/facefree-business.jpg";
+import passportImg from "@/assets/passport-tickets.jpg";
 import { WorldMap } from "@/components/site/WorldMap";
 import { useReveal } from "@/hooks/use-reveal";
 import { CheckCircle2, ShieldCheck, FileCheck, Clock } from "lucide-react";
@@ -88,17 +86,24 @@ export function Trust() {
               ))}
             </ul>
           </div>
-          <div className="reveal-scale relative">
-            <div className="absolute -inset-8 rounded-full bg-sky/40 blur-3xl animate-blob" />
-            <img src={caseImg} alt="Документы и рабочее место для сопровождения переезда" loading="lazy" width={1024} height={768} className="relative animate-float-y rounded-3xl object-cover shadow-glow" />
+          <div className="reveal grid grid-cols-2 gap-4">
+            {[["5", "этапов под контролем"], ["800+", "закрытых кейсов"], ["30", "дней — от подачи"], ["0", "скрытых платежей"]].map(([v, l], i) => (
+              <div key={l} style={{ transitionDelay: `${i * 90}ms` }} className="reveal group rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:-translate-y-1 hover:border-coral">
+                <div className="font-display text-5xl font-bold text-primary transition group-hover:text-sky">{v}</div>
+                <div className="mt-2 h-1 w-10 rounded-full bg-coral transition-all duration-500 group-hover:w-20" />
+                <div className="mt-3 text-sm text-muted-foreground">{l}</div>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Consultant featured */}
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="reveal-scale relative order-2 lg:order-1">
-            <div className="absolute inset-6 rounded-full bg-sky animate-blob" />
-            <img src={consultantImg} alt="Офис иммиграционного сопровождения" loading="lazy" width={1024} height={768} className="relative mx-auto aspect-[4/3] w-full rounded-lg object-cover shadow-glow ring-8 ring-card" />
+          <div className="reveal relative order-2 overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-soft lg:order-1">
+            <div className="flex items-center gap-3"><span className="relative flex h-3 w-3"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-whatsapp opacity-60" /><span className="relative h-3 w-3 rounded-full bg-whatsapp" /></span><span className="text-sm font-semibold text-primary">Менеджер на связи</span></div>
+            <div className="mt-6 font-display text-7xl font-bold leading-none text-primary md:text-8xl">24<span className="text-sky">/</span>7</div>
+            <p className="mt-4 text-muted-foreground">Ответ в мессенджере в среднем за 15 минут — в любом часовом поясе.</p>
+            <div className="mt-6 h-1.5 overflow-hidden rounded-full bg-secondary"><div className="h-full w-1/3 animate-[progress-slide_2.4s_ease-in-out_infinite] rounded-full bg-coral" /></div>
           </div>
           <div className="reveal order-1 lg:order-2">
             <h3 className="font-display text-3xl font-bold text-primary md:text-4xl">

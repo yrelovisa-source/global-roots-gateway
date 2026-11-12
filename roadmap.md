@@ -13,3 +13,4 @@
 - [x] Replace the four images in the services section with topic-matched images.
 - [x] Capitalize the Yrelo brand throughout visible copy, logo, metadata, and favicon.
 - [x] Verify desktop and mobile rendering and the services-to-consultation flow.
+- [x] Check all page links; add animated mobile consultation button; reorder form (purpose → age → country); add thank-you page; topic-matched photos; faster first screen.

@@ -1,6 +1,6 @@
 import { useReveal } from "@/hooks/use-reveal";
 import ivan from "@/assets/expert-ivan.jpg";
-import { Linkedin, Send } from "lucide-react";
+import { MessageCircle, Send } from "lucide-react";
 
 const team = [
   {
@@ -79,11 +79,11 @@ export function Experts() {
               <a href="#consult" className="inline-flex items-center gap-2 rounded-full bg-coral-gradient px-6 py-3 text-sm font-semibold text-coral-foreground shadow-coral transition hover:scale-105">
                 Записаться на разбор
               </a>
-              <a href="https://t.me/yrelo" target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold text-primary transition hover:bg-secondary">
+              <a href="https://t.me/y_relo" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold text-primary transition hover:bg-secondary">
                 <Send className="h-4 w-4" /> Telegram
               </a>
-              <a href="#" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold text-primary transition hover:bg-secondary">
-                <Linkedin className="h-4 w-4" /> LinkedIn
+              <a href="https://wa.me/+79921923792" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold text-primary transition hover:bg-secondary">
+                <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
             </div>
           </div>

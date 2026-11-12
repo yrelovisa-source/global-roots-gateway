@@ -16,23 +16,19 @@ const countries = [
   { id: "any", flag: "✨", label: "Подберите сами" },
 ];
 
-const goals = [
-  { id: "talent", label: "Виза таланта", desc: "O-1, EB-2 NIW, Global Talent" },
-  { id: "passive", label: "Пассивный доход / digital nomad", desc: "ВНЖ для удалёнщиков" },
-  { id: "business", label: "Бизнес и стартап", desc: "Открытие компании, стартап-виза" },
-  { id: "realestate", label: "Через недвижимость", desc: "Greece, Cyprus, Turkey, Spain" },
-  { id: "study", label: "Образование", desc: "Вуз, языковые и профкурсы" },
-  { id: "roots", label: "Корни / репатриация", desc: "Чили, Аргентина, Испания" },
-  { id: "citizenship", label: "Второе гражданство", desc: "Вануату, Сан-Томе" },
-  { id: "family", label: "Переезд семьёй", desc: "Включая детей и родителей" },
+const purposes = [
+  { id: "travel", label: "Путешествия", desc: "Туристическая виза, долгие поездки" },
+  { id: "relocation", label: "Переезд", desc: "ВНЖ, ПМЖ, гражданство" },
+  { id: "study", label: "Учёба", desc: "Вуз, языковые и профкурсы" },
+  { id: "business", label: "Бизнес и инвестиции", desc: "Компания, стартап, недвижимость" },
 ];
 
-const budgets = [
-  { id: "lt50", label: "До $50 000" },
-  { id: "50_150", label: "$50 000 – $150 000" },
-  { id: "150_500", label: "$150 000 – $500 000" },
-  { id: "gt500", label: "Свыше $500 000" },
-  { id: "unknown", label: "Пока не определился" },
+const ages = [
+  { id: "lt18", label: "До 18 лет" },
+  { id: "18_30", label: "18–30 лет" },
+  { id: "31_45", label: "31–45 лет" },
+  { id: "46_60", label: "46–60 лет" },
+  { id: "gt60", label: "Старше 60 лет" },
 ];
 
 const timing = [
@@ -46,8 +42,8 @@ export function Quiz() {
   const ref = useReveal<HTMLDivElement>();
   const [step, setStep] = useState(0);
   const [country, setCountry] = useState<string | null>(null);
-  const [goal, setGoal] = useState<string | null>(null);
-  const [budget, setBudget] = useState<string | null>(null);
+  const [purpose, setPurpose] = useState<string | null>(null);
+  const [age, setAge] = useState<string | null>(null);
   const [time, setTime] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
@@ -55,13 +51,13 @@ export function Quiz() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const steps = ["Страна", "Цель", "Бюджет", "Срок", "Контакты"];
+  const steps = ["Цель", "Возраст", "Страна", "Срок", "Контакты"];
   const progress = useMemo(() => ((step + 1) / steps.length) * 100, [step]);
 
   const canNext =
-    (step === 0 && !!country) ||
-    (step === 1 && !!goal) ||
-    (step === 2 && !!budget) ||
+    (step === 0 && !!purpose) ||
+    (step === 1 && !!age) ||
+    (step === 2 && !!country) ||
     (step === 3 && !!time) ||
     (step === 4 && name.trim().length > 1 && contact.trim().length > 4);
 
@@ -78,11 +74,12 @@ export function Quiz() {
         name: name.trim(),
         contact: contact.trim(),
         country: labelOf(countries, country),
-        goal: labelOf(goals, goal),
-        budget: labelOf(budgets, budget),
+        goal: labelOf(purposes, purpose),
+        age: labelOf(ages, age),
         time: labelOf(timing, time),
       });
       setSent(true);
+      window.location.hash = "spasibo";
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Не удалось отправить заявку. Напишите нам напрямую в WhatsApp или Telegram.");
     } finally {
@@ -102,7 +99,7 @@ export function Quiz() {
             Подберём программу за 2 минуты
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Ответьте на 4 вопроса — иммиграционный консультант пришлёт стратегию и стоимость.
+            Ответьте на 4 коротких вопроса — иммиграционный консультант пришлёт стратегию и стоимость.
           </p>
         </div>
 
@@ -121,29 +118,12 @@ export function Quiz() {
                 <div key={step} className="animate-[fade-in_0.4s_ease-out]">
                   {step === 0 && (
                     <>
-                      <h3 className="font-display text-2xl font-bold text-primary">Какая страна интересует?</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">Можно выбрать регион — поможем с конкретикой.</p>
-                      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                        {countries.map((c) => (
-                          <button key={c.id} type="button" onClick={() => setCountry(c.id)}
-                            className={`flex items-center gap-2 rounded-2xl border-2 p-4 text-left text-sm font-semibold transition ${
-                              country === c.id ? "border-coral bg-coral/10 text-primary shadow-coral" : "border-border bg-card hover:border-coral/40"
-                            }`}>
-                            <span className="text-xl">{c.flag}</span>{c.label}
-                          </button>
-                        ))}
-                      </div>
-                    </>
-                  )}
-
-                  {step === 1 && (
-                    <>
-                      <h3 className="font-display text-2xl font-bold text-primary">Для чего вам ВНЖ или гражданство?</h3>
+                      <h3 className="font-display text-2xl font-bold text-primary">Вы планируете путешествие или переезд?</h3>
                       <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                        {goals.map((g) => (
-                          <button key={g.id} type="button" onClick={() => setGoal(g.id)}
+                        {purposes.map((g) => (
+                          <button key={g.id} type="button" onClick={() => setPurpose(g.id)}
                             className={`rounded-2xl border-2 p-4 text-left transition ${
-                              goal === g.id ? "border-coral bg-coral/10 shadow-coral" : "border-border hover:border-coral/40"
+                              purpose === g.id ? "border-coral bg-coral/10 shadow-coral" : "border-border hover:border-coral/40"
                             }`}>
                             <div className="font-semibold text-primary">{g.label}</div>
                             <div className="text-xs text-muted-foreground">{g.desc}</div>
@@ -153,16 +133,34 @@ export function Quiz() {
                     </>
                   )}
 
-                  {step === 2 && (
+                  {step === 1 && (
                     <>
-                      <h3 className="font-display text-2xl font-bold text-primary">Какой бюджет на программу?</h3>
+                      <h3 className="font-display text-2xl font-bold text-primary">Сколько вам лет?</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">От возраста зависят доступные программы.</p>
                       <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                        {budgets.map((b) => (
-                          <button key={b.id} type="button" onClick={() => setBudget(b.id)}
+                        {ages.map((b) => (
+                          <button key={b.id} type="button" onClick={() => setAge(b.id)}
                             className={`rounded-2xl border-2 p-4 text-left font-semibold transition ${
-                              budget === b.id ? "border-coral bg-coral/10 text-primary shadow-coral" : "border-border hover:border-coral/40"
+                              age === b.id ? "border-coral bg-coral/10 text-primary shadow-coral" : "border-border hover:border-coral/40"
                             }`}>
                             {b.label}
+                          </button>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {step === 2 && (
+                    <>
+                      <h3 className="font-display text-2xl font-bold text-primary">Какая страна интересует?</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">Можно выбрать регион — поможем с конкретикой.</p>
+                      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                        {countries.map((c) => (
+                          <button key={c.id} type="button" onClick={() => setCountry(c.id)}
+                            className={`flex items-center gap-2 rounded-2xl border-2 p-4 text-left text-sm font-semibold transition ${
+                              country === c.id ? "border-coral bg-coral/10 text-primary shadow-coral" : "border-border bg-card hover:border-coral/40"
+                            }`}>
+                            <span className="text-xl">{c.flag}</span>{c.label}
                           </button>
                         ))}
                       </div>

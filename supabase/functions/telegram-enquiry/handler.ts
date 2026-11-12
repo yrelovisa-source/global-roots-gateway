@@ -6,6 +6,7 @@ const enquirySchema = z.object({
   country: z.string().trim().max(100).default(''),
   goal: z.string().trim().max(150).default(''),
   budget: z.string().trim().max(100).default(''),
+  age: z.string().trim().max(100).default(''),
   time: z.string().trim().max(100).default(''),
 }).strict();
 
@@ -37,8 +38,9 @@ export function createHandler(deps: Dependencies) {
     const text = [
       'Новая заявка Yrelo.com', '',
       `Имя: ${data.name}`, `Контакт: ${data.contact}`,
-      `Страна: ${data.country}`, `Цель: ${data.goal}`,
-      `Бюджет: ${data.budget}`, `Срок: ${data.time}`,
+      `Цель: ${data.goal}`, `Возраст: ${data.age}`,
+      `Страна: ${data.country}`,
+      ...(data.budget ? [`Бюджет: ${data.budget}`] : []), `Срок: ${data.time}`,
     ].join('\n');
     try {
       const response = await deps.fetch(`https://api.telegram.org/bot${token}/sendMessage`, {

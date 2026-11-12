@@ -69,8 +69,8 @@ export function Hero() {
         <img
           src={heroImg}
           alt="Панорама Барселоны и Средиземного моря"
-          width={1536}
-          height={1024}
+          width={1200}
+          height={800}
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-center opacity-15 grayscale"

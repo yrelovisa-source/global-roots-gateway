@@ -5,7 +5,7 @@ const schema = z.object({
   contact: z.string().trim().min(5).max(255),
   country: z.string().max(100),
   goal: z.string().max(150),
-  budget: z.string().max(100),
+  age: z.string().max(100),
   time: z.string().max(100),
 });
 
