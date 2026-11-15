@@ -1,86 +1,23 @@
 import { useReveal } from "@/hooks/use-reveal";
-import { GraduationCap, ArrowRight, Award, Building2 } from "lucide-react";
-import eduSpain from "@/assets/facefree-campus.jpg";
-import eduGermany from "@/assets/facefree-germany.jpg";
-import eduNetherlands from "@/assets/facefree-netherlands.jpg";
+import { GraduationCap, ArrowRight, CheckCircle2 } from "lucide-react";
 
-type Item = {
-  flag: string;
+type Case = {
   country: string;
-  title: string;
-  desc: string;
-  bullets: string[];
-  img: string;
+  client: string;
+  school: string;
+  price: string;
+  term: string;
+  steps: string[];
   tag?: string;
 };
 
-const items: Item[] = [
-  {
-    flag: "\n",
-    country: "Великобритания",
-    title: "Школы-пансионы и университеты",
-    desc: "Eton, Harrow, Westminster, топ-10 британских университетов. Подбор, подача, опекунство и виза Student / Child Student.",
-    bullets: ["Boarding schools от 11 лет", "Russell Group университеты", "Опека и виза под ключ"],
-    img: eduSpain,
-    tag: "Топ-выбор",
-  },
-  {
-    flag: "\n",
-    country: "Великобритания",
-    title: "Graduate Route — работа после диплома",
-    desc: "2 года рабочей визы после окончания UK университета без оффера. Путь к Skilled Worker и ILR.",
-    bullets: ["2 года без оффера", "Любая работа", "Путь к ВНЖ"],
-    img: eduSpain,
-  },
-  {
-    flag: "\n",
-    country: "Швейцария",
-    title: "Частные школы Швейцарии",
-    desc: "Le Rosey, Institut auf dem Rosenberg, Aiglon. Билингвальное обучение, IB / A-Level / Matura.",
-    bullets: ["Сильнейшие школы Европы", "Семья получает ВНЖ", "Программы IB и A-Level"],
-    img: eduGermany,
-  },
-  {
-    flag: "\n",
-    country: "Испания",
-    title: "Университеты и магистратура",
-    desc: "IE, ESADE, IESE и государственные вузы. Студенческая виза с правом работать 30 ч/нед.",
-    bullets: ["Топ-бизнес-школы мира", "Семья включена", "Работа 30 ч/нед"],
-    img: eduSpain,
-  },
-  {
-    flag: "\n",
-    country: "Италия",
-    title: "Bocconi, Politecnico, дизайн-академии",
-    desc: "Bachelor и Master на английском. Доступная стоимость, гранты, виза с работой и стажировками.",
-    bullets: ["От €4 000/год", "Английские программы", "Стажировки в ЕС"],
-    img: eduGermany,
-  },
-  {
-    flag: "\n",
-    country: "Германия",
-    title: "Бесплатное высшее в Германии",
-    desc: "TU Munich, RWTH Aachen, LMU. Государственные университеты — обучение бесплатно, виза Job Seeker после диплома.",
-    bullets: ["€0 за обучение", "18 мес Job Seeker", "Путь к ВНЖ ЕС"],
-    img: eduGermany,
-    tag: "Бесплатно",
-  },
-  {
-    flag: "\n",
-    country: "Франция",
-    title: "Sciences Po, HEC, Сорбонна",
-    desc: "Бакалавриат и магистратура на английском и французском. APS-виза на 12 месяцев после диплома.",
-    bullets: ["Топ-вузы Европы", "Английские треки", "APS после диплома"],
-    img: eduSpain,
-  },
-  {
-    flag: "\n",
-    country: "Нидерланды",
-    title: "Голландские исследовательские университеты",
-    desc: "Amsterdam, Delft, Utrecht. 95% программ на английском, Orientation Year для поиска работы.",
-    bullets: ["English-taught", "1 год Orientation", "Сильный диплом"],
-    img: eduNetherlands,
-  },
+const cases: Case[] = [
+  { country: "США", client: "Алексей, 18 лет, Москва", school: "Бакалавриат, Computer Science — Boston University", price: "$58 000 / год", term: "11 месяцев", steps: ["Подбор 8 вузов и SAT", "Эссе и рекомендации", "Оффер и стипендия $12 000", "Виза F-1 через Астану"], tag: "Стипендия" },
+  { country: "Великобритания", client: "Мария, 13 лет, Казань", school: "Школа-пансион — Harrow School", price: "£52 000 / год", term: "7 месяцев", steps: ["Тесты UKiset и интервью", "Подготовка к экзаменам", "Опекун в Лондоне", "Виза Child Student"], tag: "Топ-выбор" },
+  { country: "Великобритания", client: "Дмитрий, 24 года, Санкт-Петербург", school: "Магистратура MSc Finance — King's College London", price: "£38 000 / год", term: "6 месяцев", steps: ["Мотивационное письмо", "IELTS 7.0", "Безусловный оффер", "Student visa + Graduate Route"] },
+  { country: "Германия", client: "Анна, 19 лет, Екатеринбург", school: "Бакалавриат — TU München", price: "€0 обучение · €12 000 / год жизнь", term: "9 месяцев", steps: ["Studienkolleg и признание аттестата", "Немецкий до C1", "Блокированный счёт", "Национальная виза D"], tag: "Бесплатно" },
+  { country: "Испания", client: "Игорь, 27 лет, Новосибирск", school: "Master in Management — IE Business School", price: "€42 000 / программа", term: "5 месяцев", steps: ["Подбор программы и GMAT", "Интервью с комиссией", "Студенческая виза", "Работа 30 ч/нед"] },
+  { country: "Нидерланды", client: "Екатерина, 22 года, Москва", school: "MSc Data Science — University of Amsterdam", price: "€20 000 / год", term: "6 месяцев", steps: ["Портфолио и CV", "Оффер через Studielink", "Виза MVV за 3 недели", "Orientation Year"] },
 ];
 
 export function Education() {
@@ -93,64 +30,48 @@ export function Education() {
             <GraduationCap className="h-4 w-4" /> Образование
           </span>
           <h2 className="mt-3 font-display text-4xl font-bold text-primary md:text-5xl">
-            Обучение в Великобритании и Европе
+            Обучение в США, Великобритании и Евросоюзе
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Школы-пансионы, топ-университеты и магистратура — с визой, опекой и поступлением под ключ.
+            Реальные кейсы наших клиентов из России: стоимость, сроки и этапы поступления под ключ.
           </p>
         </div>
 
-        <div className="reveal mt-10 grid gap-4 sm:grid-cols-3">
-          {[
-            { Icon: Award, t: "Поступление от 95%", d: "Из всех заявок наших студентов" },
-            { Icon: GraduationCap, t: "100+ вузов и школ", d: "Прямые договоры с приёмными комиссиями" },
-            { Icon: Building2, t: "Виза + опека", d: "Полное сопровождение для несовершеннолетних" },
-          ].map((s) => (
-            <div key={s.t} className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 shadow-soft">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-coral-gradient text-coral-foreground shadow-coral">
-                <s.Icon className="h-5 w-5" />
-              </span>
-              <div>
-                <div className="font-display text-base font-bold text-primary">{s.t}</div>
-                <div className="text-sm text-muted-foreground">{s.d}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {items.map((p, i) => (
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {cases.map((c, i) => (
             <a
-              key={p.country + p.title}
+              key={c.school}
               href="#consult"
-              style={{ transitionDelay: `${i * 60}ms` }}
-              className="reveal group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition hover:-translate-y-2 hover:shadow-glow"
+              style={{ transitionDelay: `${i * 70}ms` }}
+              className="reveal group relative flex flex-col rounded-3xl border border-border bg-card p-6 shadow-soft transition hover:-translate-y-2 hover:border-coral hover:shadow-glow"
             >
-              <div className="relative h-44 overflow-hidden">
-                <img src={p.img} alt={p.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
-                {p.tag && (
-                  <span className="absolute left-4 top-4 rounded-full bg-coral-gradient px-3 py-1 text-xs font-bold text-coral-foreground shadow-coral">
-                    {p.tag}
-                  </span>
-                )}
-                <span className="absolute bottom-4 left-4 text-3xl drop-shadow">{p.flag}</span>
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{c.country}</span>
+                {c.tag && <span className="rounded-full bg-coral-gradient px-3 py-1 text-xs font-bold text-coral-foreground shadow-coral">{c.tag}</span>}
               </div>
-              <div className="flex-1 p-5">
-                <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{p.country}</div>
-                <div className="mt-1 font-display text-lg font-bold text-primary">{p.title}</div>
-                <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-                <ul className="mt-3 space-y-1.5 text-sm">
-                  {p.bullets.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-foreground/80">
-                      <span className="h-1.5 w-1.5 rounded-full bg-coral" /> {b}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-coral group-hover:gap-2 transition-all">
-                  Узнать подробнее <ArrowRight className="h-4 w-4" />
-                </span>
+              <div className="mt-3 font-display text-lg font-bold text-primary">{c.school}</div>
+              <div className="mt-1 text-sm text-muted-foreground">Кейс: {c.client}</div>
+              <div className="mt-4 grid grid-cols-2 gap-3 rounded-2xl bg-secondary p-3">
+                <div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground">Стоимость</div>
+                  <div className="font-display text-sm font-bold text-primary">{c.price}</div>
+                </div>
+                <div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground">Срок под ключ</div>
+                  <div className="font-display text-sm font-bold text-primary">{c.term}</div>
+                </div>
               </div>
+              <ol className="mt-4 flex-1 space-y-2 text-sm">
+                {c.steps.map((s, n) => (
+                  <li key={s} className="flex items-start gap-2 text-foreground/80">
+                    <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">{n + 1}</span>
+                    {s}
+                  </li>
+                ))}
+              </ol>
+              <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-coral transition-all group-hover:gap-2">
+                <CheckCircle2 className="h-4 w-4" /> Хочу так же <ArrowRight className="h-4 w-4" />
+              </span>
             </a>
           ))}
         </div>

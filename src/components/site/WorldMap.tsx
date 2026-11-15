@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { ArrowRight, Globe2, MapPin } from "lucide-react";
 import worldLand from "@/assets/world-land.svg";
 
@@ -43,28 +43,13 @@ const y = (lat: number) => ((85 - lat) / 145) * 100;
 export function WorldMap() {
   const [selected, setSelected] = useState("Испания");
   const current = destinations.find((d) => d.country === selected) ?? destinations[0];
-  const mapScrollRef = useRef<HTMLDivElement>(null);
-
-  const showDestination = (destination: Destination) => {
-    setSelected(destination.country);
-    const scroller = mapScrollRef.current;
-    if (scroller && scroller.scrollWidth > scroller.clientWidth) {
-      scroller.scrollTo({ left: scroller.scrollWidth * x(destination.longitude) / 100 - scroller.clientWidth / 2, behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    const scroller = mapScrollRef.current;
-    if (scroller && scroller.scrollWidth > scroller.clientWidth) {
-      scroller.scrollLeft = scroller.scrollWidth * x(-4) / 100 - scroller.clientWidth / 2;
-    }
-  }, []);
+  const showDestination = (destination: Destination) => setSelected(destination.country);
 
   return (
     <div className="reveal-scale mt-10 overflow-hidden rounded-3xl border border-border bg-card shadow-soft">
-      <div ref={mapScrollRef} className="relative overflow-x-auto bg-sky/20" aria-label="Карта мира, прокрутите в сторону для других стран">
-        <div className="relative aspect-[1200/510] min-w-[850px] overflow-hidden" aria-label="Интерактивная карта иммиграционных программ">
-          <img src={worldLand} alt="Карта мира с расположением стран" className="absolute inset-0 h-full w-full" />
+      <div className="map-ocean relative">
+        <div className="relative aspect-[1200/510] w-full overflow-hidden" aria-label="Интерактивная карта иммиграционных программ">
+          <div role="img" aria-label="Карта мира с расположением стран" className="map-land absolute inset-0" style={{ WebkitMaskImage: `url(${worldLand})`, maskImage: `url(${worldLand})` }} />
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(transparent_98%,var(--border)_100%),linear-gradient(90deg,transparent_98%,var(--border)_100%)] bg-[length:10%_20%] opacity-30" />
           {destinations.map((destination, index) => {
             const active = selected === destination.country;
@@ -78,17 +63,17 @@ export function WorldMap() {
                 aria-label={`${destination.country}: ${destination.programs.join(", ")}`}
                 aria-pressed={active}
                 className="group absolute z-10 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-coral"
-                style={{ left: `${x(destination.longitude)}%`, top: `${y(destination.latitude)}%`, width: 20, height: 20, animationDelay: `${index * 35}ms` }}
+                style={{ left: `${x(destination.longitude)}%`, top: `${y(destination.latitude)}%`, width: "clamp(12px, 2vw, 20px)", height: "clamp(12px, 2vw, 20px)", animationDelay: `${index * 35}ms` }}
               >
-                <span className={`absolute h-5 w-5 rounded-full border border-coral/50 bg-coral/20 ${active ? "map-marker-ring" : ""}`} />
-                <span className={`relative h-2.5 w-2.5 rounded-full border-2 border-card shadow-soft transition-transform duration-200 group-hover:scale-150 ${active ? "scale-150 bg-primary" : "bg-coral"}`} />
-                <span className={`pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-primary px-2 py-1 text-[11px] font-semibold text-primary-foreground shadow-soft transition-opacity ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
+                <span className={`absolute h-full w-full rounded-full border border-coral/50 bg-coral/20 ${active ? "map-marker-ring" : ""}`} />
+                <span className={`relative h-1.5 w-1.5 rounded-full border sm:h-2.5 sm:w-2.5 sm:border-2 border-card shadow-soft transition-transform duration-200 group-hover:scale-150 ${active ? "scale-150 bg-primary" : "bg-card"}`} />
+                <span className={`pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-primary px-2 py-1 text-[9px] font-semibold text-primary-foreground sm:text-[11px] shadow-soft transition-opacity ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
                   {destination.country}
                 </span>
               </button>
             );
           })}
-          <div className="pointer-events-none absolute bottom-4 left-4 flex items-center gap-2 rounded-full border border-border bg-card/90 px-3 py-1.5 text-xs font-medium text-primary shadow-soft">
+          <div className="pointer-events-none absolute bottom-2 left-2 hidden sm:flex sm:bottom-4 sm:left-4 items-center gap-2 rounded-full border border-border bg-card/90 px-3 py-1.5 text-xs font-medium text-primary shadow-soft">
             <Globe2 className="h-4 w-4 text-coral" /> 25 направлений
           </div>
           <div className="absolute bottom-4 right-4 z-20 hidden w-60 border border-border bg-card/95 p-4 shadow-soft backdrop-blur-sm lg:block" aria-live="polite">

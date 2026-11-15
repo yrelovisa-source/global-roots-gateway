@@ -2,6 +2,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { ArrowRight, Sparkles } from "lucide-react";
 import chileFamily from "@/assets/facefree-chile.jpg";
 import armeniaImg from "@/assets/armenia.jpg";
+import germanyImg from "@/assets/facefree-germany.jpg";
 
 type Program = {
   flag: string;
@@ -153,7 +154,7 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
   },
   {
     title: "Репатриация по корням",
-    subtitle: "Армянская и израильская программы — гражданство по происхождению",
+    subtitle: "Армения, Израиль и Германия — гражданство по происхождению",
     note: "Если у вас есть реальные корни — мы бесплатно поможем заполнить файл «Семейное древо» и проверим право на репатриацию.",
     items: [
       {
@@ -173,28 +174,72 @@ const groups: { title: string; subtitle: string; note?: string; items: Program[]
         img: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=900&q=80&auto=format&fit=crop",
         tag: "Сразу паспорт",
       },
+      {
+        flag: "\n",
+        country: "Германия",
+        visa: "Поздние переселенцы (Spätaussiedler)",
+        desc: "Программа для потомков этнических немцев из бывшего СССР: статус переселенца и гражданство Германии для заявителя и семьи.",
+        bullets: ["Немецкие корни в роду", "Язык от уровня B1", "Гражданство семье"],
+        img: germanyImg,
+        tag: "Новое",
+      },
     ],
   },
   {
     title: "Гражданства за инвестиции",
-    subtitle: "Сан-Томе и Принсипи, Вануату",
+    subtitle: "Все программы, доступные для граждан РФ в 2026 году",
     items: [
       {
         flag: "\n",
-        country: "Сан-Томе и Принсипи",
-        visa: "Гражданство",
-        desc: "Доступная программа CBI с быстрой выдачей паспорта.",
-        bullets: ["3–5 месяцев", "Безвиз 60+ стран", "Семья включена"],
-        img: "https://images.unsplash.com/photo-1504457047772-27faf1c00561?w=900&q=80&auto=format&fit=crop",
+        country: "Вануату",
+        visa: "Гражданство за взнос",
+        desc: "Взнос в фонд развития, без визита и проживания. Принимаются граждане РФ.",
+        bullets: ["от $130 000", "1–3 месяца", "Без проживания"],
+        img: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=900&q=80&auto=format&fit=crop",
+        tag: "Самая быстрая",
       },
       {
         flag: "\n",
-        country: "Вануату",
-        visa: "Гражданство",
-        desc: "Самая быстрая в мире программа гражданства за инвестиции.",
-        bullets: ["1–2 месяца", "Безвиз UK", "Без проживания"],
-        img: "https://images.unsplash.com/photo-1504457047772-27faf1c00561?w=900&q=80&auto=format&fit=crop",
-        tag: "Самая быстрая",
+        country: "Сан-Томе и Принсипи",
+        visa: "Гражданство за взнос",
+        desc: "Самая доступная программа CBI, открыта для граждан РФ.",
+        bullets: ["от $90 000", "3–5 месяцев", "Семья включена"],
+        img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80&auto=format&fit=crop",
+        tag: "Самая доступная",
+      },
+      {
+        flag: "\n",
+        country: "Турция",
+        visa: "Гражданство через недвижимость",
+        desc: "Покупка недвижимости с обязательством владения 3 года. Паспорт всей семье.",
+        bullets: ["от $400 000", "6–9 месяцев", "Доход от аренды"],
+        img: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=900&q=80&auto=format&fit=crop",
+        tag: "Хит",
+      },
+      {
+        flag: "\n",
+        country: "Египет",
+        visa: "Гражданство за инвестиции",
+        desc: "Недвижимость, депозит или безвозвратный взнос. Подходит для граждан РФ.",
+        bullets: ["от $250 000", "6–12 месяцев", "Несколько вариантов"],
+        img: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=900&q=80&auto=format&fit=crop",
+      },
+      {
+        flag: "\n",
+        country: "Науру",
+        visa: "Гражданство за взнос",
+        desc: "Новая тихоокеанская программа, без визита и экзамена.",
+        bullets: ["от $105 000", "3–4 месяца", "Без проживания"],
+        img: "https://images.unsplash.com/photo-1528127269322-539801943592?w=900&q=80&auto=format&fit=crop",
+        tag: "Новая",
+      },
+      {
+        flag: "\n",
+        country: "Камбоджа",
+        visa: "Гражданство за взнос",
+        desc: "Донат или инвестиции в экономику. Без требований к проживанию.",
+        bullets: ["от $245 000", "3–6 месяцев", "Без проживания"],
+        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop",
       },
     ],
   },
