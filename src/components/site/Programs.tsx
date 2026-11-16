@@ -1,4 +1,6 @@
 import { useReveal } from "@/hooks/use-reveal";
+import { Fragment } from "react";
+import { TalentCases } from "./TalentCases";
 import { ArrowRight, Sparkles } from "lucide-react";
 import chileFamily from "@/assets/facefree-chile.jpg";
 import armeniaImg from "@/assets/armenia.jpg";
@@ -259,8 +261,10 @@ export function Programs() {
         </div>
 
         <div className="mt-14 space-y-16">
-          {groups.map((g) => (
-            <div key={g.title}>
+          {groups.map((g, gi) => (
+            <Fragment key={g.title}>
+            {gi === 2 && <TalentCases />}
+            <div>
               <div className="reveal mb-6 flex flex-wrap items-end justify-between gap-3">
                 <div>
                   <h3 className="font-display text-2xl font-bold text-primary md:text-3xl">{g.title}</h3>
@@ -311,6 +315,7 @@ export function Programs() {
                 ))}
               </div>
             </div>
+            </Fragment>
           ))}
         </div>
       </div>
